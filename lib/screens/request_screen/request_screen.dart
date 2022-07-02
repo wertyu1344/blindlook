@@ -15,6 +15,9 @@ class RequestScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          SizedBox(
+            height: 20,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -24,7 +27,7 @@ class RequestScreen extends StatelessWidget {
               ),
               Text(
                 "Request",
-                style: controller.requestTextStyle,
+                style: controller.requestTextStyleTitle,
               ),
               Image.asset(
                 "assets/images/request_page_images/message-question.png",
@@ -33,7 +36,14 @@ class RequestScreen extends StatelessWidget {
               )
             ],
           ),
-          Text("Choose your request type"),
+          SizedBox(
+            height: 20,
+          ),
+          Text("Choose your request type",
+              style: controller.requestTextStyleMedium),
+          SizedBox(
+            height: 20,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -44,14 +54,47 @@ class RequestScreen extends StatelessWidget {
               RequestWidgets(imagePath: "Complaint", padding: EdgeInsets.zero),
             ],
           ),
-          Text("Past Request"),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            "Past Request",
+            style: controller.requestTextStyleMedium,
+          ),
+          SizedBox(
+            height: 15,
+          ),
           Expanded(
             child: ListView.builder(
               itemCount: 2,
               itemBuilder: (context, index) {
-                return Card(
-                  child: ListTile(),
-                );
+                return Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: ListTile(
+                      leading: Container(
+                          width: size.width / 7,
+                          height: size.width / 7,
+                          decoration: const BoxDecoration(
+                            color: Color.fromARGB(243, 247, 247, 247),
+                          ),
+                          child: Center(
+                            child: Image.asset(
+                              "assets/images/request_page_images/heart.png",
+                              width: 25,
+                              height: 25,
+                            ),
+                          )),
+                      title: Text(
+                        "Requst Tile $index",
+                        style: controller.requestTextStyleMedium,
+                      ),
+                      subtitle: Text(
+                        "JUN 10, 2022",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            color: Color.fromRGBO(48, 0, 68, 1)),
+                      ),
+                    ));
               },
             ),
           )
