@@ -14,10 +14,14 @@ class Controller extends GetxController {
     RequestScreen(),
     NewsScreen(),
     SignUpScreen(),
+  ];
+  List<Widget> pagesSingIn = [
+    HomePage(),
+    RequestScreen(),
     SimulationScreen(),
     SettingsScreen(),
   ];
-  var pageIndex = 0;
+  var pageIndex = 0.obs;
   TextStyle HomePageContentTextStyle = TextStyle(color: Colors.white);
   double butonlarArasiBosluk = 10;
   bool isLogin = true;
