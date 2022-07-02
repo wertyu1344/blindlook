@@ -2,7 +2,6 @@ import 'package:blindlook/widgets/bot_nav_bar/bot_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
 import 'controller/controller.dart';
 
 void main() {
