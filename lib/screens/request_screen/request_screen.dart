@@ -66,6 +66,7 @@ class RequestScreen extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
+              physics: BouncingScrollPhysics(),
               itemCount: 2,
               itemBuilder: (context, index) {
                 return Padding(
