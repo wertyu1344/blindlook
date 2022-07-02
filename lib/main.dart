@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+          extendBody: true,
           bottomNavigationBar: BotNavBar(),
           body: controller.pages.elementAt(controller.pageIndex)),
     );
