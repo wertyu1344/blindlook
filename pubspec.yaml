@@ -64,6 +64,7 @@ flutter:
     - assets/images/home_page_images/
     - assets/images/home_page_images/content/
     - assets/images/home_page_images/avatars/
+    - assets/icons/bot_nav_bar/
 
 
   #   - images/a_dot_ham.jpeg
