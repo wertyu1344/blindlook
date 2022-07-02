@@ -7,15 +7,18 @@ import '../screens/log_reg_screen/sign_up_screen.dart';
 import '../screens/news_screen/news_screen.dart';
 import '../screens/settings_screen/settings_screen.dart';
 import '../screens/simulation_screen/simulation_screen.dart';
+import '../screens/story_screen/story_screen.dart';
 
 class Controller extends GetxController {
   List<Widget> pages = [
+    Story(),
     HomePage(),
     RequestScreen(),
     NewsScreen(),
     SignUpScreen(),
   ];
   List<Widget> pagesSingIn = [
+    Story(),
     HomePage(),
     RequestScreen(),
     SimulationScreen(),
