@@ -77,8 +77,8 @@ class SimulationScreen extends StatelessWidget {
                           child: Center(
                             child: Image.asset(
                               "assets/images/simulation_page_images/amazon.png",
-                              width: 25,
-                              height: 25,
+                              width: 26,
+                              height: 26,
                             ),
                           )),
                       title: Text(
