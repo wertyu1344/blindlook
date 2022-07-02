@@ -18,4 +18,5 @@ class Controller extends GetxController {
     SettingsScreen(),
   ];
   var pageIndex = 0;
+  var isSigned = false;
 }
