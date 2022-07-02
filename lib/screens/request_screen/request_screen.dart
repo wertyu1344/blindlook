@@ -6,16 +6,17 @@ import 'package:get/get.dart';
 class RequestScreen extends StatelessWidget {
   RequestScreen({Key? key}) : super(key: key);
   final LoginClass controller = Get.put(LoginClass());
+  int itemCount = 4;
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
@@ -36,68 +37,80 @@ class RequestScreen extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Text("Choose your request type",
               style: controller.requestTextStyleMedium),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               RequestWidgets(
-                  imagePath: "Request", padding: EdgeInsets.only(right: 5)),
+                  imagePath: "Request",
+                  padding: const EdgeInsets.only(right: 5)),
               RequestWidgets(
-                  imagePath: "Feedback", padding: EdgeInsets.only(right: 5)),
+                  imagePath: "Feedback",
+                  padding: const EdgeInsets.only(right: 5)),
               RequestWidgets(imagePath: "Complaint", padding: EdgeInsets.zero),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Text(
             "Past Request",
             style: controller.requestTextStyleMedium,
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Expanded(
-            child: ListView.builder(
-              physics: BouncingScrollPhysics(),
-              itemCount: 2,
-              itemBuilder: (context, index) {
-                return Padding(
-                    padding: const EdgeInsets.only(bottom: 8.0),
-                    child: ListTile(
-                      leading: Container(
-                          width: size.width / 7,
-                          height: size.width / 7,
-                          decoration: const BoxDecoration(
-                            color: Color.fromARGB(243, 247, 247, 247),
-                          ),
-                          child: Center(
-                            child: Image.asset(
-                              "assets/images/request_page_images/heart.png",
-                              width: 25,
-                              height: 25,
+            child: itemCount == 0
+                ? Center(
+                    child: Text(
+                      "No request yet",
+                      style: controller.requestTextStyleTitle,
+                    ),
+                  )
+                : ListView.builder(
+                    physics: BouncingScrollPhysics(),
+                    itemCount: itemCount,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: ListTile(
+                            leading: Container(
+                                width: size.width / 7,
+                                height: size.width / 7,
+                                decoration: const BoxDecoration(
+                                  color: Color.fromARGB(243, 247, 247, 247),
+                                ),
+                                child: Center(
+                                  child: Image.asset(
+                                    "assets/images/request_page_images/heart.png",
+                                    width: 25,
+                                    height: 25,
+                                  ),
+                                )),
+                            title: Text(
+                              "Requst Tile $index",
+                              style: controller.requestTextStyleMedium,
                             ),
-                          )),
-                      title: Text(
-                        "Requst Tile $index",
-                        style: controller.requestTextStyleMedium,
-                      ),
-                      subtitle: Text(
-                        "JUN 10, 2022",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            color: Color.fromRGBO(48, 0, 68, 1)),
-                      ),
-                    ));
-              },
-            ),
+                            subtitle: const Text(
+                              "JUN 10, 2022",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: Color.fromRGBO(48, 0, 68, 1)),
+                            ),
+                          ));
+                    },
+                  ),
+          ),
+          const SizedBox(
+            height: 50,
           )
         ],
       ),
