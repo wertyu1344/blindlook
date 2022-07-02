@@ -14,7 +14,7 @@ class CenterWidgets extends StatelessWidget {
       required this.flex,
       required this.padding})
       : super(key: key);
-  Controller controller = Get.put(Controller());
+  LoginClass controller = Get.put(LoginClass());
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class CenterWidgets extends StatelessWidget {
                 ),
                 Text(
                   imagePath,
-                  style: controller.HomePageContentTextStyle,
+                  style: controller.homePageContentTextStyle,
                 )
               ],
             )),
