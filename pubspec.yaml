@@ -35,6 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   get: ^4.6.5
+  font_awesome_flutter: ^10.1.0
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,7 @@ flutter:
     - assets/icons/bot_nav_bar/
     - assets/images/request_page_images/
     - assets/images/simulation_page_images/
+    - assets/images/story/
 
 
   #   - images/a_dot_ham.jpeg
