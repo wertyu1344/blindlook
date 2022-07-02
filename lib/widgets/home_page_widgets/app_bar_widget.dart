@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
 class AppBarWidget extends StatelessWidget {
-  const AppBarWidget({Key? key}) : super(key: key);
+  final bool isLogin;
+  const AppBarWidget({Key? key, required this.isLogin}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,9 @@ class AppBarWidget extends StatelessWidget {
           width: size.width / 7,
         ),
         Image.asset(
-          "assets/images/home_page_images/send.png",
+          isLogin
+              ? "assets/images/home_page_images/notification.png"
+              : "assets/images/home_page_images/send.png",
           height: size.height / 20,
           width: size.width / 7,
         ),

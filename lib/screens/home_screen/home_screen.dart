@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            const Expanded(flex: 2, child: AppBarWidget()),
+            Expanded(flex: 2, child: AppBarWidget(isLogin: controller.isLogin)),
             buildSizedBox(h: 30),
             Expanded(
               flex: 3,
