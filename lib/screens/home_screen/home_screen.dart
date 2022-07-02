@@ -1,22 +1,19 @@
-import 'package:blindlook/controller/controller.dart';
 import 'package:blindlook/widgets/home_page_widgets/center_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 import '../../widgets/home_page_widgets/app_bar_widget.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
-  LoginClass controller = Get.put(LoginClass());
-
+  var butonlarArasiBosluk = 10.0;
   @override
   Widget build(BuildContext context) {
-    double butonlarArasiBosluk = 10;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            const Expanded(flex: 2, child: AppBarWidget()),
+            Expanded(flex: 2, child: AppBarWidget()),
             buildSizedBox(h: 30),
             Expanded(
               flex: 3,
@@ -48,9 +45,7 @@ class HomePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           CenterWidgets(
-                              imagePath: controller.isLogin
-                                  ? "EyeBrands"
-                                  : "Simulations",
+                              imagePath: "EyeBrands",
                               flex: 14,
                               padding: EdgeInsets.only(
                                   top: 45,
