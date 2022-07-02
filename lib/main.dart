@@ -1,8 +1,8 @@
 import 'package:blindlook/screens/story_screen/story_screen.dart';
+import 'package:blindlook/widgets/bot_nav_bar/bot_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
 import 'controller/controller.dart';
 
 void main() {
@@ -19,8 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: SafeArea(
-          child:
-              Story() /* Obx(
+        child: Obx(
           () => Scaffold(
               extendBody: true,
               bottomNavigationBar: SizedBox(height: 80, child: BotNavBar()),
@@ -28,8 +27,8 @@ class MyApp extends StatelessWidget {
                   ? controller.pages.elementAt(controller.pageIndex.value)
                   : controller.pagesSingIn
                       .elementAt(controller.pageIndex.value)),
-        ),*/
-          ),
+        ),
+      ),
     );
   }
 }

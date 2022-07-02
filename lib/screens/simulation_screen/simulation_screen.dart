@@ -8,6 +8,7 @@ class SimulationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Container(
       padding: constants.pagePadding,
       child: Column(
@@ -25,34 +26,73 @@ class SimulationScreen extends StatelessWidget {
                 style: constants.requestTextStyleTitle,
               ),
               Image.asset(
-                "assets/images/simualtion_page_images/search.png",
+                "assets/images/simulation_page_images/search.png",
                 width: 24,
                 height: 24,
               )
             ],
           ),
+          buildSizedBox(h: 50),
           Container(
-            decoration: BoxDecoration(color: constants.primaryColor),
+            height: 60,
+            decoration: BoxDecoration(
+                color: constants.primaryColor,
+                borderRadius: BorderRadius.circular(7)),
             child: Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 20),
+                  padding: const EdgeInsets.only(left: 35),
                   child: Image.asset(
                     "assets/images/simulation_page_images/sort.png",
-                    width: 24,
-                    height: 24,
+                    width: 28,
+                    height: 28,
                   ),
                 ),
-                SizedBox(
-                  width: 50,
+                const SizedBox(
+                  width: 30,
+                ),
+                const Text(
+                  "Category",
+                  style: TextStyle(
+                      color: Color.fromARGB(223, 255, 255, 255), fontSize: 20),
                 )
               ],
             ),
           ),
+          buildSizedBox(h: 25),
           Expanded(
             child: ListView.builder(
-              itemBuilder: (context, index) => ListTile(),
-              itemCount: 15,
+              physics: const BouncingScrollPhysics(),
+              itemCount: 20,
+              itemBuilder: (context, index) {
+                return Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: ListTile(
+                      leading: Container(
+                          width: size.width / 7,
+                          height: size.width / 7,
+                          decoration: const BoxDecoration(
+                            color: Color.fromRGBO(242, 242, 242, 1),
+                          ),
+                          child: Center(
+                            child: Image.asset(
+                              "assets/images/simulation_page_images/amazon.png",
+                              width: 25,
+                              height: 25,
+                            ),
+                          )),
+                      title: Text(
+                        "Requst Tile $index",
+                        style: constants.requestTextStyleMedium,
+                      ),
+                      subtitle: Text(
+                        "JUN 10, 2022",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            color: constants.primaryColor),
+                      ),
+                    ));
+              },
             ),
           )
         ],
