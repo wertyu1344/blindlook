@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../controller/controller.dart';
+import '../../constants/constants.dart';
 
 class CenterWidgets extends StatelessWidget {
   final EdgeInsets padding;
   final String imagePath;
   final int flex;
+  Constants constants = Constants();
 
   CenterWidgets(
       {Key? key,
@@ -14,7 +13,6 @@ class CenterWidgets extends StatelessWidget {
       required this.flex,
       required this.padding})
       : super(key: key);
-  LoginClass controller = Get.put(LoginClass());
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +23,7 @@ class CenterWidgets extends StatelessWidget {
         padding: padding,
         child: Container(
             decoration: BoxDecoration(
-                color: Color.fromRGBO(48, 0, 68, 1),
+                color: constants.primaryColor,
                 borderRadius: BorderRadiusDirectional.circular(24)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -40,7 +38,7 @@ class CenterWidgets extends StatelessWidget {
                 ),
                 Text(
                   imagePath,
-                  style: controller.homePageContentTextStyle,
+                  style: constants.homePageContentTextStyle,
                 )
               ],
             )),

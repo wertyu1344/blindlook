@@ -1,3 +1,4 @@
+import 'package:blindlook/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -6,7 +7,7 @@ import '../../controller/controller.dart';
 class BotNavBar extends StatelessWidget {
   Controller controller = Get.put(Controller());
   BotNavBar({Key? key}) : super(key: key);
-
+  Constants constants = Constants();
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -18,14 +19,14 @@ class BotNavBar extends StatelessWidget {
         () => BottomNavigationBar(
             type: BottomNavigationBarType.shifting,
             showUnselectedLabels: true,
-            backgroundColor: Color.fromRGBO(48, 0, 68, 1),
+            backgroundColor: constants.primaryColor,
             selectedItemColor: Colors.white,
             unselectedItemColor: Color.fromRGBO(133, 91, 151, 1),
             onTap: (int i) => controller.pageIndex.value = i,
             currentIndex: controller.pageIndex.value,
             items: [
               BottomNavigationBarItem(
-                  backgroundColor: Color.fromRGBO(48, 0, 68, 1),
+                  backgroundColor: constants.primaryColor,
                   icon: Image.asset(
                       controller.pageIndex.value == 0
                           ? "assets/icons/bot_nav_bar/home_icon.png"
@@ -33,7 +34,7 @@ class BotNavBar extends StatelessWidget {
                       height: 24),
                   label: "Home"),
               BottomNavigationBarItem(
-                  backgroundColor: Color.fromRGBO(48, 0, 68, 1),
+                  backgroundColor: constants.primaryColor,
                   icon: Image.asset(
                       controller.pageIndex.value == 1
                           ? "assets/icons/bot_nav_bar/request_icon.png"
@@ -42,7 +43,7 @@ class BotNavBar extends StatelessWidget {
                   label: "Requests"),
               controller.isLogin == false
                   ? BottomNavigationBarItem(
-                      backgroundColor: Color.fromRGBO(48, 0, 68, 1),
+                      backgroundColor: constants.primaryColor,
                       icon: Image.asset(
                           controller.pageIndex.value == 2
                               ? "assets/icons/bot_nav_bar/request_icon.png"
@@ -50,7 +51,7 @@ class BotNavBar extends StatelessWidget {
                           height: 24),
                       label: "News")
                   : BottomNavigationBarItem(
-                      backgroundColor: Color.fromRGBO(48, 0, 68, 1),
+                      backgroundColor: constants.primaryColor,
                       icon: Image.asset(
                           controller.pageIndex.value == 2
                               ? "assets/icons/bot_nav_bar/simulation_icon.png"
@@ -59,7 +60,7 @@ class BotNavBar extends StatelessWidget {
                       label: "Simuation"),
               controller.isLogin == false
                   ? BottomNavigationBarItem(
-                      backgroundColor: Color.fromRGBO(48, 0, 68, 1),
+                      backgroundColor: constants.primaryColor,
                       icon: Image.asset(
                           controller.pageIndex.value == 3
                               ? "assets/icons/bot_nav_bar/sign_up_icon_disable.png"
@@ -67,7 +68,7 @@ class BotNavBar extends StatelessWidget {
                           height: 24),
                       label: "Sign Up")
                   : BottomNavigationBarItem(
-                      backgroundColor: Color.fromRGBO(48, 0, 68, 1),
+                      backgroundColor: constants.primaryColor,
                       icon: Image.asset(
                           controller.pageIndex.value == 3
                               ? "assets/icons/bot_nav_bar/settings_icon.png"

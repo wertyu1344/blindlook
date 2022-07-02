@@ -1,18 +1,17 @@
-import 'package:blindlook/controller/controller.dart';
+import 'package:blindlook/constants/constants.dart';
 import 'package:blindlook/widgets/register_page_widgets/requst_type_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class RequestScreen extends StatelessWidget {
   RequestScreen({Key? key}) : super(key: key);
-  final LoginClass controller = Get.put(LoginClass());
+  Constants constants = Constants();
   int itemCount = 4;
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: constants.pagePadding,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -28,7 +27,7 @@ class RequestScreen extends StatelessWidget {
               ),
               Text(
                 "Request",
-                style: controller.requestTextStyleTitle,
+                style: constants.requestTextStyleTitle,
               ),
               Image.asset(
                 "assets/images/request_page_images/message-question.png",
@@ -41,7 +40,7 @@ class RequestScreen extends StatelessWidget {
             height: 20,
           ),
           Text("Choose your request type",
-              style: controller.requestTextStyleMedium),
+              style: constants.requestTextStyleMedium),
           const SizedBox(
             height: 20,
           ),
@@ -62,7 +61,7 @@ class RequestScreen extends StatelessWidget {
           ),
           Text(
             "Past Request",
-            style: controller.requestTextStyleMedium,
+            style: constants.requestTextStyleMedium,
           ),
           const SizedBox(
             height: 15,
@@ -72,7 +71,7 @@ class RequestScreen extends StatelessWidget {
                 ? Center(
                     child: Text(
                       "No request yet",
-                      style: controller.requestTextStyleTitle,
+                      style: constants.requestTextStyleTitle,
                     ),
                   )
                 : ListView.builder(
@@ -97,13 +96,13 @@ class RequestScreen extends StatelessWidget {
                                 )),
                             title: Text(
                               "Requst Tile $index",
-                              style: controller.requestTextStyleMedium,
+                              style: constants.requestTextStyleMedium,
                             ),
-                            subtitle: const Text(
+                            subtitle: Text(
                               "JUN 10, 2022",
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
-                                  color: Color.fromRGBO(48, 0, 68, 1)),
+                                  color: constants.primaryColor),
                             ),
                           ));
                     },

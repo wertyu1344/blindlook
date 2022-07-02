@@ -1,9 +1,8 @@
+import 'package:blindlook/constants/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../../controller/controller.dart';
 
 class RequestWidgets extends StatelessWidget {
-  final LoginClass controller = Get.put(LoginClass());
+  final Constants constants = Constants();
   final EdgeInsets padding;
   final String imagePath;
 
@@ -19,7 +18,7 @@ class RequestWidgets extends StatelessWidget {
           width: size.width / 3.3,
           height: size.height / 3.4,
           decoration: BoxDecoration(
-              color: Color.fromRGBO(48, 0, 68, 1),
+              color: constants.primaryColor,
               borderRadius: BorderRadiusDirectional.circular(15)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,7 +34,7 @@ class RequestWidgets extends StatelessWidget {
               ),
               Text(
                 imagePath,
-                style: controller.homePageContentTextStyle,
+                style: constants.homePageContentTextStyle,
               )
             ],
           )),

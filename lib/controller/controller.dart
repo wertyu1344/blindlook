@@ -29,13 +29,4 @@ class Controller extends GetxController {
 
 class LoginClass extends GetxController {
   bool isLogin = true;
-  TextStyle requestTextStyleTitle = TextStyle(
-      color: Color.fromRGBO(48, 0, 68, 1),
-      fontSize: 26,
-      fontWeight: FontWeight.w500);
-  TextStyle requestTextStyleMedium = TextStyle(
-      color: Color.fromRGBO(48, 0, 68, 1),
-      fontSize: 17,
-      fontWeight: FontWeight.w500);
-  TextStyle homePageContentTextStyle = TextStyle(color: Colors.white);
 }
