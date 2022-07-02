@@ -13,11 +13,15 @@ class RequestScreen extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(10),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(),
+              SizedBox(
+                height: size.height / 22,
+                width: size.width / 8,
+              ),
               Text(
                 "Request",
                 style: controller.requestTextStyle,
