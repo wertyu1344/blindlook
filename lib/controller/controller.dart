@@ -22,11 +22,14 @@ class Controller extends GetxController {
     SettingsScreen(),
   ];
   var pageIndex = 0.obs;
-  TextStyle HomePageContentTextStyle = TextStyle(color: Colors.white);
+
   double butonlarArasiBosluk = 10;
   bool isLogin = true;
 }
 
 class LoginClass extends GetxController {
   bool isLogin = true;
+  TextStyle requestTextStyle =
+      TextStyle(color: Color.fromRGBO(48, 0, 68, 1), fontSize: 24);
+  TextStyle homePageContentTextStyle = TextStyle(color: Colors.white);
 }

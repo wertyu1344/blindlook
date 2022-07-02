@@ -13,15 +13,15 @@ class AppBarWidget extends StatelessWidget {
       children: [
         Image.asset(
           "assets/images/home_page_images/glasses.png",
-          height: size.height / 14,
-          width: size.width / 7,
+          height: size.height / 16,
+          width: size.width / 8,
         ),
         Image.asset(
           isLogin
               ? "assets/images/home_page_images/notification.png"
               : "assets/images/home_page_images/send.png",
-          height: size.height / 20,
-          width: size.width / 7,
+          height: size.height / 22,
+          width: size.width / 8,
         ),
       ],
     );
