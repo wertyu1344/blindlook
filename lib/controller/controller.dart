@@ -10,7 +10,7 @@ import '../screens/simulation_screen/simulation_screen.dart';
 
 class Controller extends GetxController {
   List<Widget> pages = [
-    HomeScreen(),
+    HomePage(),
     RequestScreen(),
     NewsScreen(),
     SignUpScreen(),
