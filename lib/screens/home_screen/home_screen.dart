@@ -6,11 +6,11 @@ import '../../widgets/home_page_widgets/app_bar_widget.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
-  LoginClass controller = Get.put(LoginClass());
+  final LoginClass controller = Get.put(LoginClass());
+  final double butonlarArasiBosluk = 10;
 
   @override
   Widget build(BuildContext context) {
-    double butonlarArasiBosluk = 10;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -70,7 +70,8 @@ class HomePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         CenterWidgets(
-                            imagePath: "Request",
+                            imagePath:
+                                controller.isLogin ? "Request" : "Community",
                             flex: 15,
                             padding: EdgeInsets.only(
                                 bottom: butonlarArasiBosluk, top: 45)),
@@ -80,7 +81,8 @@ class HomePage extends StatelessWidget {
                             padding:
                                 EdgeInsets.only(bottom: butonlarArasiBosluk)),
                         CenterWidgets(
-                            imagePath: "SignUp",
+                            imagePath:
+                                controller.isLogin ? "SignUp" : "Loyalty",
                             flex: 10,
                             padding: EdgeInsets.zero),
                         buildSizedBox(h: 80)

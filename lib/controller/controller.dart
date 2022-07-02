@@ -20,9 +20,9 @@ class Controller extends GetxController {
   var pageIndex = 0;
   TextStyle HomePageContentTextStyle = TextStyle(color: Colors.white);
   double butonlarArasiBosluk = 10;
-  bool isLogin = false;
+  bool isLogin = true;
 }
 
 class LoginClass extends GetxController {
-  bool isLogin = false;
+  bool isLogin = true;
 }
