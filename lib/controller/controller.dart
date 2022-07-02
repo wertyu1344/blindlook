@@ -18,4 +18,7 @@ class Controller extends GetxController {
     SettingsScreen(),
   ];
   var pageIndex = 0;
+  TextStyle HomePageContentTextStyle = TextStyle(color: Colors.white);
+  double butonlarArasiBosluk = 10;
+  bool isLogin = false;
 }
