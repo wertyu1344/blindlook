@@ -22,3 +22,7 @@ class Controller extends GetxController {
   double butonlarArasiBosluk = 10;
   bool isLogin = false;
 }
+
+class LoginClass extends GetxController {
+  bool isLogin = false;
+}

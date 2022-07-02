@@ -1,9 +1,12 @@
+import 'package:blindlook/controller/controller.dart';
 import 'package:blindlook/widgets/home_page_widgets/center_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../widgets/home_page_widgets/app_bar_widget.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
+  LoginClass controller = Get.put(LoginClass());
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +48,9 @@ class HomePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           CenterWidgets(
-                              imagePath: "EyeBrands",
+                              imagePath: controller.isLogin
+                                  ? "EyeBrands"
+                                  : "Simulations",
                               flex: 14,
                               padding: EdgeInsets.only(
                                   top: 45,
