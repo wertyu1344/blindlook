@@ -19,12 +19,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: SafeArea(
-        child: Scaffold(
-            extendBody: true,
-            bottomNavigationBar: BotNavBar(),
-            body: controller.isLogin == false
-                ? controller.pages.elementAt(controller.pageIndex.value)
-                : controller.pagesSingIn.elementAt(controller.pageIndex.value)),
+        child: Obx(
+          () => Scaffold(
+              extendBody: true,
+              bottomNavigationBar: SizedBox(height: 80, child: BotNavBar()),
+              body: controller.isLogin == false
+                  ? controller.pages.elementAt(controller.pageIndex.value)
+                  : controller.pagesSingIn
+                      .elementAt(controller.pageIndex.value)),
+        ),
       ),
     );
   }
