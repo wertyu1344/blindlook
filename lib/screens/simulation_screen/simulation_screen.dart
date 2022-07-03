@@ -82,11 +82,11 @@ class SimulationScreen extends StatelessWidget {
                             ),
                           )),
                       title: Text(
-                        "Requst Tile $index",
+                        "Amazon$index",
                         style: constants.requestTextStyleMedium,
                       ),
                       subtitle: Text(
-                        "JUN 10, 2022",
+                        "E-Commerce",
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             color: constants.primaryColor),
