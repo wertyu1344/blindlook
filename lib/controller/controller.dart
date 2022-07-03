@@ -31,6 +31,9 @@ class Controller extends GetxController {
 
   double butonlarArasiBosluk = 10;
   bool isLogin = true;
+
+  // 0 => enything selected
+  int eyeBrandsFilterIndex = 0;
 }
 
 class LoginClass extends GetxController {
