@@ -17,7 +17,7 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
 
-  runApp(MyApp());
+  runApp(GetMaterialApp(home: SignUpScreen()));
 }
 
 class MyApp extends StatelessWidget {
@@ -38,7 +38,8 @@ class MyApp extends StatelessWidget {
       SimulationScreen(),
       SettingsScreen(),
     ];
-    return MaterialApp(
+    return GetMaterialApp(
+      theme: ThemeData(fontFamily: 'Cera'),
       home: SafeArea(
         child: Obx(
           () => Scaffold(

@@ -36,7 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5
   font_awesome_flutter: ^10.1.0
-
+  pin_code_fields: ^7.4.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -70,6 +70,7 @@ flutter:
     - assets/images/simulation_page_images/
     - assets/images/story/
     - assets/images/eye_brands/
+    - assets/images/sign_up/
 
 
   #   - images/a_dot_ham.jpeg
