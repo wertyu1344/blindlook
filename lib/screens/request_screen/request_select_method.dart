@@ -3,6 +3,8 @@ import 'package:blindlook/controller/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../widgets/request_page_widgets/method_type_widgets.dart';
+
 class RequestSelectMethod extends StatelessWidget {
   final Function downgrade;
   RequestSelectMethod({Key? key, required this.downgrade}) : super(key: key);
@@ -15,6 +17,7 @@ class RequestSelectMethod extends StatelessWidget {
     return Container(
       padding: constants.pagePadding,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SizedBox(height: 20),
           Row(
@@ -44,7 +47,81 @@ class RequestSelectMethod extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          Text("data"),
+          Text(
+            "What is your request about?",
+            style: constants.requestTextStyleMedium,
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          TextFormField(
+            style: const TextStyle(color: Colors.white),
+            cursorColor: Colors.white54,
+            decoration: InputDecoration(
+              hintText: "Lorem ipsum dolor...",
+              hintStyle: TextStyle(
+                  color: constants.primaryColor.withOpacity(0.6),
+                  fontSize: 20,
+                  fontStyle: FontStyle.italic),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderSide: BorderSide(
+                  width: 1.5,
+                  color: constants.primaryColor,
+                  style: BorderStyle.solid,
+                ),
+              ),
+              disabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderSide: BorderSide(
+                  width: 1.5,
+                  color: constants.primaryColor,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderSide: BorderSide(
+                  width: 1.5,
+                  style: BorderStyle.solid,
+                  color: constants.primaryColor,
+                ),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderSide: BorderSide(
+                  width: 1.5,
+                  style: BorderStyle.solid,
+                  color: constants.primaryColor,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 45,
+          ),
+          Text(
+            "Select the method you’ll like to use",
+            style: constants.requestTextStyleMedium,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              MethodType(
+                  imagePath: "assets/images/request_page_images/Just_Text.png",
+                  onTab: () {},
+                  padding: EdgeInsets.only(right: 8)),
+              MethodType(
+                  imagePath:
+                      "assets/images/request_page_images/Video_Record.png",
+                  onTab: () {},
+                  padding: EdgeInsets.only(right: 8)),
+              MethodType(
+                  imagePath:
+                      "assets/images/request_page_images/Photo_Video.png",
+                  onTab: () {},
+                  padding: EdgeInsets.zero),
+            ],
+          ),
         ],
       ),
     );
