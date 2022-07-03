@@ -25,13 +25,15 @@ class BotNavBar extends StatelessWidget {
             unselectedItemColor: Color.fromRGBO(133, 91, 151, 1),
             onTap: (int i) {
               controllerLogin.isHomePageActive.value = "Home";
-              print("seleceted" +
-                  controllerLogin.selectedItemColor.value.toString());
+              print("seleceted${controllerLogin.selectedItemColor.value}");
               controllerLogin.isHomePageActive.value == "Home"
                   ? controllerLogin.selectedItemColor.value = Colors.white
                   : controllerLogin.selectedItemColor.value =
                       Color.fromRGBO(133, 91, 151, 1);
               controller.pageIndex.value = i;
+              controller.pageIndex.value == 1
+                  ? controllerLogin.requestPageIndex.value = 0
+                  : null;
             },
             currentIndex: controller.pageIndex.value,
             items: [
