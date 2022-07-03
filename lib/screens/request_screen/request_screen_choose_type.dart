@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../constants/constants.dart';
 import '../../controller/controller.dart';
-import '../../widgets/register_page_widgets/register_pages_app_bar.dart';
-import '../../widgets/register_page_widgets/requst_type_widgets.dart';
+import '../../widgets/request_page_widgets/request_pages_app_bar.dart';
+import '../../widgets/request_page_widgets/request_type_widgets.dart';
 
 class RequestPageChooseRequest extends StatelessWidget {
   final Function incradeIndex;
