@@ -9,6 +9,70 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
         body: Scaffold(
       resizeToAvoidBottomInset: false,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 50.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(flex: 10, child: SizedBox()),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Center(
+                  child: Image.asset(
+                    "assets/images/sign_up/scan.png",
+                    height: 48,
+                  ),
+                ),
+                SizedBox(height: 12),
+                const Text(
+                  "Your request successfully sent.\nWe’ll get back to you soon.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(48, 0, 68, 1),
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500),
+                ),
+              ],
+            ),
+            Spacer(),
+            Padding(
+              padding: const EdgeInsets.only(top: 300.0),
+              child: Container(
+                width: 290,
+                height: 50,
+                decoration: BoxDecoration(
+                    color: const Color.fromRGBO(48, 0, 68, 1),
+                    borderRadius: BorderRadius.circular(6)),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset("assets/images/sign_up/button_shape.png"),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        "Back to home",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 50),
+          ],
+        ),
+      ),
+    ));
+  }
+
+  Scaffold uploadPhotoSection() {
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar:
           AppBar(backgroundColor: Colors.transparent, elevation: 0, actions: [
         InkWell(
@@ -92,7 +156,7 @@ class SignUpScreen extends StatelessWidget {
           ],
         ),
       ),
-    ));
+    );
   }
 
   Scaffold mailSection() {
