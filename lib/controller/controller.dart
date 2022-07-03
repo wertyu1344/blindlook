@@ -36,6 +36,7 @@ class Controller extends GetxController {
 }
 
 class LoginClass extends GetxController {
+  var eyeBrandsVisible = true.obs;
   bool isLogin = true;
   var eyeBrandsFilterIndex = 0.obs;
 }
