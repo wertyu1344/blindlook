@@ -103,22 +103,23 @@ class RequestSelectMethod extends StatelessWidget {
             "Select the method you’ll like to use",
             style: constants.requestTextStyleMedium,
           ),
+          SizedBox(
+            height: 30,
+          ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               MethodType(
-                  imagePath: "assets/images/request_page_images/Just_Text.png",
-                  onTab: () {},
-                  padding: EdgeInsets.only(right: 8)),
+                  imagePath: "Just Text",
+                  onTab: (imagePath) {},
+                  padding: EdgeInsets.only(right: 7)),
               MethodType(
-                  imagePath:
-                      "assets/images/request_page_images/Video_Record.png",
-                  onTab: () {},
-                  padding: EdgeInsets.only(right: 8)),
+                  imagePath: "Voice Record",
+                  onTab: (imagePath) {},
+                  padding: EdgeInsets.only(right: 7)),
               MethodType(
-                  imagePath:
-                      "assets/images/request_page_images/Photo_Video.png",
-                  onTab: () {},
+                  imagePath: "Photo Video",
+                  onTab: (imagePath) {},
                   padding: EdgeInsets.zero),
             ],
           ),

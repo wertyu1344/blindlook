@@ -23,7 +23,7 @@ class MethodType extends StatelessWidget {
       child: Padding(
         padding: padding,
         child: Container(
-            width: size.width / 3.3,
+            width: size.width / 3.4,
             height: size.height / 3.4,
             decoration: BoxDecoration(
                 color: constants.primaryColor,
@@ -41,8 +41,9 @@ class MethodType extends StatelessWidget {
                   height: 30,
                 ),
                 Text(
-                  imagePath,
-                  style: constants.homePageContentTextStyle,
+                  imagePath.replaceAll(" ", "\n"),
+                  style:
+                      constants.homePageContentTextStyle.copyWith(fontSize: 20),
                 )
               ],
             )),
