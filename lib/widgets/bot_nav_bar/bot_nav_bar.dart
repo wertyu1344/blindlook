@@ -6,6 +6,7 @@ import '../../controller/controller.dart';
 
 class BotNavBar extends StatelessWidget {
   Controller controller = Get.put(Controller());
+  LoginClass controllerLogin = Get.put(LoginClass());
   BotNavBar({Key? key}) : super(key: key);
   Constants constants = Constants();
   @override
@@ -20,15 +21,25 @@ class BotNavBar extends StatelessWidget {
             type: BottomNavigationBarType.shifting,
             showUnselectedLabels: true,
             backgroundColor: constants.primaryColor,
-            selectedItemColor: Colors.white,
+            selectedItemColor: controllerLogin.selectedItemColor.value,
             unselectedItemColor: Color.fromRGBO(133, 91, 151, 1),
-            onTap: (int i) => controller.pageIndex.value = i,
+            onTap: (int i) {
+              controllerLogin.isHomePageActive.value = "Home";
+              print("seleceted" +
+                  controllerLogin.selectedItemColor.value.toString());
+              controllerLogin.isHomePageActive.value == "Home"
+                  ? controllerLogin.selectedItemColor.value = Colors.white
+                  : controllerLogin.selectedItemColor.value =
+                      Color.fromRGBO(133, 91, 151, 1);
+              controller.pageIndex.value = i;
+            },
             currentIndex: controller.pageIndex.value,
             items: [
               BottomNavigationBarItem(
                   backgroundColor: constants.primaryColor,
                   icon: Image.asset(
-                      controller.pageIndex.value == 0
+                      controller.pageIndex.value == 0 &&
+                              controllerLogin.isHomePageActive.value == "Home"
                           ? "assets/icons/bot_nav_bar/home_icon.png"
                           : "assets/icons/bot_nav_bar/home_icon_disable.png",
                       height: 24),
@@ -41,7 +52,7 @@ class BotNavBar extends StatelessWidget {
                           : "assets/icons/bot_nav_bar/requests_icon_disable.png",
                       height: 24),
                   label: "Requests"),
-              controller.isLogin == false
+              controllerLogin.isLogin == false
                   ? BottomNavigationBarItem(
                       backgroundColor: constants.primaryColor,
                       icon: Image.asset(
@@ -58,7 +69,7 @@ class BotNavBar extends StatelessWidget {
                               : "assets/icons/bot_nav_bar/simulation_icon_disable.png",
                           height: 24),
                       label: "Simuation"),
-              controller.isLogin == false
+              controllerLogin.isLogin == false
                   ? BottomNavigationBarItem(
                       backgroundColor: constants.primaryColor,
                       icon: Image.asset(
