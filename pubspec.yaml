@@ -88,19 +88,11 @@ flutter:
   fonts:
     - family: Cera
       fonts:
-        - asset: assets/fonts/Cera Pro Medium.ttf
-        - asset: assets/fonts/Cera Pro Black Italic.ttf
-          style: blackItalic
-        - asset: assets/fonts/Cera Pro Black.ttf
-          style: black
-        - asset: assets/fonts/Cera Pro Bold.ttf
-          style: bold
-        - asset: assets/fonts/Cera Pro Bold.ttf
-          style: w500
-        - asset: assets/fonts/Cera Pro Light.ttf
-          style: light
-        - asset: assets/fonts/Cera Pro Regular Italic.ttf
-          style: regularItalic
+        - asset: assets/fonts/Cera_Pro_Medium.ttf
+        
+        - asset: assets/fonts/Cera_Pro_Bold.ttf
+          weight: 500
+
 
   #
   # For details regarding fonts from package dependencies,
