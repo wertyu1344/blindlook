@@ -5,6 +5,7 @@ import '../../constants/constants.dart';
 class CenterWidgets extends StatelessWidget {
   final EdgeInsets padding;
   final String imagePath;
+  final String text;
   final int flex;
   var onTap;
   Constants constants = Constants();
@@ -14,7 +15,8 @@ class CenterWidgets extends StatelessWidget {
       required this.imagePath,
       required this.flex,
       required this.padding,
-      required this.onTap})
+      required this.onTap,
+      required this.text})
       : super(key: key);
 
   @override
@@ -42,7 +44,7 @@ class CenterWidgets extends StatelessWidget {
                     height: 24,
                   ),
                   Text(
-                    imagePath,
+                    text,
                     style: constants.homePageContentTextStyle,
                   )
                 ],

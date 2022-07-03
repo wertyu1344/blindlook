@@ -8,12 +8,17 @@ class Controller extends GetxController {
 
   double butonlarArasiBosluk = 10;
 
-  // 0 => enything selected
+  var homepageCenter1 = "Home".obs;
+  var homepageCenter2 = "BlindLook".obs;
+  var homepageCenter3 = "Request".obs;
+  var homePageCenter4 = "News".obs;
+  var homePageCenter5 = "SignUp".obs;
 }
 
 class LoginClass extends GetxController {
   var isHomePageActive = "Home".obs;
   var selectedItemColor = Colors.white.obs;
-  bool isLogin = true;
+  bool isLogin = false;
+  var eyeBrandsVisible = true.obs;
   var eyeBrandsFilterIndex = 0.obs;
 }
