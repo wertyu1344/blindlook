@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class RequestSelectMethod extends StatelessWidget {
-  RequestSelectMethod({Key? key}) : super(key: key);
+  final Function downgrade;
+  RequestSelectMethod({Key? key, required this.downgrade}) : super(key: key);
   final Constants constants = Constants();
   LoginClass controller = Get.find<LoginClass>();
 
@@ -20,7 +21,9 @@ class RequestSelectMethod extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                onPressed: () => controller.requestPageIndex - 1,
+                onPressed: () {
+                  downgrade();
+                },
                 icon: Image.asset(
                   "assets/images/request_page_images/back.png",
                   height: size.height / 22,
@@ -38,6 +41,10 @@ class RequestSelectMethod extends StatelessWidget {
               )
             ],
           ),
+          SizedBox(
+            height: 30,
+          ),
+          Text("data"),
         ],
       ),
     );

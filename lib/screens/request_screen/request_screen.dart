@@ -15,16 +15,31 @@ class _RequestScreenState extends State<RequestScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (controller.requestPageIndex.value == 0) {
-      return RequestPageChooseRequest(
-        itemCount: 4,
-        callBack: () {
-          controller.requestPageIndex.value += 1;
+    switch (controller.requestPageIndex.value) {
+      case 0:
+        return RequestPageChooseRequest(
+          itemCount: 4,
+          incradeIndex: () {
+            controller.requestPageIndex.value++;
+            setState(() {});
+          },
+        );
+
+      case 1:
+        return RequestSelectMethod(downgrade: () {
+          controller.requestPageIndex.value--;
+
           setState(() {});
-        },
-      );
-    } else {
-      return RequestSelectMethod();
+        });
+      default:
+        return RequestPageChooseRequest(
+          itemCount: 4,
+          incradeIndex: () {
+            controller.requestPageIndex.value++;
+
+            setState(() {});
+          },
+        );
     }
   }
 }
