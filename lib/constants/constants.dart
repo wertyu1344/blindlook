@@ -5,6 +5,10 @@ class Constants {
       color: Color.fromRGBO(48, 0, 68, 1),
       fontSize: 26,
       fontWeight: FontWeight.w500);
+  TextStyle requestTextStyleTitleWhite = const TextStyle(
+      color: Color.fromARGB(255, 255, 255, 255),
+      fontSize: 26,
+      fontWeight: FontWeight.w500);
   TextStyle requestTextStyleMedium = const TextStyle(
       color: Color.fromRGBO(48, 0, 68, 1),
       fontSize: 17,

@@ -1,6 +1,8 @@
 import 'package:blindlook/constants/constants.dart';
+import 'package:blindlook/widgets/eye_brands_widgets/eye_brands_search_widget.dart';
 import 'package:blindlook/widgets/home_page_widgets/eye_brads/grid_view_items.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class EyeBrands extends StatelessWidget {
   EyeBrands({Key? key}) : super(key: key);
@@ -24,10 +26,16 @@ class EyeBrands extends StatelessWidget {
                 "EyeBrands",
                 style: constants.requestTextStyleTitle,
               ),
-              Image.asset(
-                "assets/images/simulation_page_images/search.png",
-                width: 24,
-                height: 24,
+              IconButton(
+                onPressed: () => showDialog(
+                    context: context,
+                    builder: (context) =>
+                        EyeBrandsSearchWidget(context: context)),
+                icon: Image.asset(
+                  "assets/images/simulation_page_images/search.png",
+                  width: 24,
+                  height: 24,
+                ),
               )
             ],
           ),
