@@ -6,7 +6,9 @@ import '../../widgets/register_page_widgets/register_pages_app_bar.dart';
 import '../../widgets/register_page_widgets/requst_type_widgets.dart';
 
 class RequestPageChooseRequest extends StatelessWidget {
+  final Function callBack;
   RequestPageChooseRequest({
+    required this.callBack,
     Key? key,
     required this.itemCount,
   }) : super(key: key);
@@ -41,22 +43,23 @@ class RequestPageChooseRequest extends StatelessWidget {
               RequestWidgets(
                   onTab: (imagePath) {
                     controller.resquestType = imagePath;
-                    controller.requestPageIndex.value++;
-                    print(controller.requestPageIndex);
+                    callBack();
                   },
                   imagePath: "Request",
                   padding: const EdgeInsets.only(right: 5)),
               RequestWidgets(
                   onTab: (imagePath) {
                     controller.resquestType = imagePath;
-                    controller.requestPageIndex++;
+
+                    callBack();
                   },
                   imagePath: "Feedback",
                   padding: const EdgeInsets.only(right: 5)),
               RequestWidgets(
                   onTab: (imagePath) {
                     controller.resquestType = imagePath;
-                    controller.requestPageIndex++;
+
+                    callBack();
                   },
                   imagePath: "Complaint",
                   padding: EdgeInsets.zero),
