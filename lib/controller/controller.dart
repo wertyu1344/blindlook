@@ -33,9 +33,9 @@ class Controller extends GetxController {
   bool isLogin = true;
 
   // 0 => enything selected
-  var eyeBrandsFilterIndex = 0;
 }
 
 class LoginClass extends GetxController {
   bool isLogin = true;
+  var eyeBrandsFilterIndex = 0.obs;
 }

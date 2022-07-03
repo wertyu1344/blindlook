@@ -1,4 +1,5 @@
 import 'package:blindlook/constants/constants.dart';
+import 'package:blindlook/controller/controller.dart';
 import 'package:blindlook/widgets/eye_brands_widgets/eye_brands_search_widget.dart';
 import 'package:blindlook/widgets/home_page_widgets/eye_brads/grid_view_items.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +9,15 @@ import '../../../widgets/eye_brands_widgets/category_dialog.dart';
 import '../../../widgets/eye_brands_widgets/country_dialog.dart';
 import '../../../widgets/eye_brands_widgets/filters.dart';
 
-class EyeBrands extends StatelessWidget {
+class EyeBrands extends StatefulWidget {
   EyeBrands({Key? key}) : super(key: key);
+
+  @override
+  State<EyeBrands> createState() => _EyeBrandsState();
+  LoginClass controller = Get.put(LoginClass());
+}
+
+class _EyeBrandsState extends State<EyeBrands> {
   final Constants constants = Constants();
 
   @override
@@ -45,46 +53,49 @@ class EyeBrands extends StatelessWidget {
               ],
             ),
             buildSizedBox(h: 50),
-            Container(
-              height: 60,
-              decoration: BoxDecoration(
-                  color: constants.primaryColor,
-                  borderRadius: BorderRadius.circular(7)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 35),
-                    child: Image.asset(
-                      "assets/images/simulation_page_images/sort.png",
-                      width: 28,
-                      height: 28,
+            Hero(
+              tag: "ccc",
+              child: Container(
+                height: 60,
+                decoration: BoxDecoration(
+                    color: constants.primaryColor,
+                    borderRadius: BorderRadius.circular(7)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 35),
+                      child: Image.asset(
+                        "assets/images/simulation_page_images/sort.png",
+                        width: 28,
+                        height: 28,
+                      ),
                     ),
-                  ),
-                  Filter(
-                    setStateCallBack: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) => CountryDialog());
-                    },
-                    size: size,
-                    title: "Country",
-                    index: 1,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 10.0),
-                    child: Filter(
+                    Filter(
                       setStateCallBack: () {
                         showDialog(
                             context: context,
-                            builder: (context) => CategoryDialog());
+                            builder: (context) => CountryDialog());
                       },
                       size: size,
-                      title: "Category",
-                      index: 2,
+                      title: "Country",
+                      index: 1,
                     ),
-                  ),
-                ],
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10.0),
+                      child: Filter(
+                        setStateCallBack: () {
+                          showDialog(
+                              context: context,
+                              builder: (context) => CountryDialog());
+                        },
+                        size: size,
+                        title: "Category",
+                        index: 2,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             buildSizedBox(h: 25),

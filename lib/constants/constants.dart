@@ -16,4 +16,8 @@ class Constants {
   TextStyle homePageContentTextStyle = const TextStyle(color: Colors.white);
   var pagePadding = const EdgeInsets.all(12.0);
   Color primaryColor = const Color.fromRGBO(48, 0, 68, 1);
+  TextStyle eyeBrandsListViewTextStyleSelected =
+      TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w400);
+  TextStyle eyeBrandsListViewTextStyleNONSelected = TextStyle(
+      color: Colors.white54, fontSize: 20, fontWeight: FontWeight.w400);
 }
