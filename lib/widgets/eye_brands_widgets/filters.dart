@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Filter extends StatelessWidget {
+  final Function setStateCallBack;
   final String title;
   final int index;
   Filter({
     Key? key,
+    required this.setStateCallBack,
     required this.size,
     required this.title,
     required this.index,
@@ -17,20 +19,26 @@ class Filter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: size.height / 20,
-      width: size.width / 3,
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-      decoration: controller.eyeBrandsFilterIndex == index
-          ? BoxDecoration(
-              color: const Color.fromARGB(200, 100, 64, 115),
-              borderRadius: BorderRadius.circular(10))
-          : null,
-      child: Center(
-        child: Text(
-          title,
-          style: const TextStyle(
-              color: Color.fromARGB(223, 255, 255, 255), fontSize: 20),
+    return InkWell(
+      onTap: () {
+        controller.eyeBrandsFilterIndex = index;
+        setStateCallBack();
+      },
+      child: Container(
+        height: size.height / 20,
+        width: size.width / 3,
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+        decoration: controller.eyeBrandsFilterIndex == index
+            ? BoxDecoration(
+                color: const Color.fromARGB(200, 100, 64, 115),
+                borderRadius: BorderRadius.circular(10))
+            : null,
+        child: Center(
+          child: Text(
+            title,
+            style: const TextStyle(
+                color: Color.fromARGB(223, 255, 255, 255), fontSize: 20),
+          ),
         ),
       ),
     );

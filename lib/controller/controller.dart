@@ -33,7 +33,7 @@ class Controller extends GetxController {
   bool isLogin = true;
 
   // 0 => enything selected
-  int eyeBrandsFilterIndex = 0;
+  var eyeBrandsFilterIndex = 0;
 }
 
 class LoginClass extends GetxController {
