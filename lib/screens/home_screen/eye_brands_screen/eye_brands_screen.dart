@@ -2,7 +2,8 @@ import 'package:blindlook/constants/constants.dart';
 import 'package:blindlook/widgets/eye_brands_widgets/eye_brands_search_widget.dart';
 import 'package:blindlook/widgets/home_page_widgets/eye_brads/grid_view_items.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
+import '../../../widgets/eye_brands_widgets/filters.dart';
 
 class EyeBrands extends StatelessWidget {
   EyeBrands({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class EyeBrands extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Container(
       padding: constants.pagePadding,
       child: Column(
@@ -56,15 +58,15 @@ class EyeBrands extends StatelessWidget {
                     height: 28,
                   ),
                 ),
-                const Text(
-                  "Country",
-                  style: TextStyle(
-                      color: Color.fromARGB(223, 255, 255, 255), fontSize: 20),
+                Filter(
+                  size: size,
+                  title: "Country",
+                  index: 1,
                 ),
-                const Text(
-                  "Category",
-                  style: TextStyle(
-                      color: Color.fromARGB(223, 255, 255, 255), fontSize: 20),
+                Filter(
+                  size: size,
+                  title: "Category",
+                  index: 2,
                 ),
                 buildSizedBox(h: 0),
               ],
