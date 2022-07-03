@@ -35,6 +35,12 @@ class _CountryDialogState extends State<CountryDialog> {
     ["Turkey", false],
     ["United Arab", false],
   ];
+  final List<List> categories = [
+    ["Categoty One", false],
+    ["Categoty Two", false],
+    ["Categoty Three", false],
+    ["Categoty Four", false],
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +102,7 @@ class _CountryDialogState extends State<CountryDialog> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Container(
@@ -106,99 +112,157 @@ class _CountryDialogState extends State<CountryDialog> {
                       borderRadius: BorderRadius.circular(7)),
                   child: Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 50,
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: 30,
                         ),
-                        child: TextFormField(
-                          style: const TextStyle(color: Colors.white),
-                          cursorColor: Colors.white54,
-                          decoration: const InputDecoration(
-                            hintText: "Search...",
-                            hintStyle: TextStyle(
-                                color: Colors.white54,
-                                fontSize: 20,
-                                fontStyle: FontStyle.italic),
-                            errorBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              borderSide: BorderSide(
-                                color: Color.fromARGB(255, 143, 24, 24),
+                        child: controller.eyeBrandsFilterIndex.value == 1
+                            ? TextFormField(
+                                style: const TextStyle(color: Colors.white),
+                                cursorColor: Colors.white54,
+                                decoration: const InputDecoration(
+                                  hintText: "Search...",
+                                  hintStyle: TextStyle(
+                                      color: Colors.white54,
+                                      fontSize: 20,
+                                      fontStyle: FontStyle.italic),
+                                  errorBorder: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                    borderSide: BorderSide(
+                                      color: Color.fromARGB(255, 143, 24, 24),
+                                    ),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                    borderSide: BorderSide(
+                                      width: 1.4,
+                                      color: Colors.white54,
+                                      style: BorderStyle.solid,
+                                    ),
+                                  ),
+                                  disabledBorder: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                    borderSide: BorderSide(
+                                      color: Colors.white54,
+                                    ),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                    borderSide: BorderSide(
+                                      style: BorderStyle.solid,
+                                      color: Colors.white54,
+                                    ),
+                                  ),
+                                  border: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                    borderSide: BorderSide(
+                                      style: BorderStyle.solid,
+                                      color: Colors.white54,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            : TextFormField(
+                                style: const TextStyle(color: Colors.white),
+                                cursorColor: Colors.white54,
+                                decoration: const InputDecoration(
+                                  hintText: "Search..",
+                                  hintStyle: TextStyle(
+                                      color: Colors.white54,
+                                      fontSize: 20,
+                                      fontStyle: FontStyle.italic),
+                                  errorBorder: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                    borderSide: BorderSide(
+                                      color: Color.fromARGB(255, 143, 24, 24),
+                                    ),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                    borderSide: BorderSide(
+                                      width: 1.4,
+                                      color: Colors.white54,
+                                      style: BorderStyle.solid,
+                                    ),
+                                  ),
+                                  disabledBorder: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                    borderSide: BorderSide(
+                                      color: Colors.white54,
+                                    ),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                    borderSide: BorderSide(
+                                      style: BorderStyle.solid,
+                                      color: Colors.white54,
+                                    ),
+                                  ),
+                                  border: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                    borderSide: BorderSide(
+                                      style: BorderStyle.solid,
+                                      color: Colors.white54,
+                                    ),
+                                  ),
+                                ),
                               ),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              borderSide: BorderSide(
-                                width: 1.4,
-                                color: Colors.white54,
-                                style: BorderStyle.solid,
-                              ),
-                            ),
-                            disabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              borderSide: BorderSide(
-                                color: Colors.white54,
-                              ),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              borderSide: BorderSide(
-                                style: BorderStyle.solid,
-                                color: Colors.white54,
-                              ),
-                            ),
-                            border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              borderSide: BorderSide(
-                                style: BorderStyle.solid,
-                                color: Colors.white54,
-                              ),
-                            ),
-                          ),
-                        ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       Expanded(
-                          child: ListView.builder(
-                        physics: BouncingScrollPhysics(),
-                        itemCount: countries.length,
-                        itemBuilder: (c, i) => Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 30,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                countries[i][0],
-                                style: countries[i][1]
-                                    ? constants
-                                        .eyeBrandsListViewTextStyleSelected
-                                    : constants
-                                        .eyeBrandsListViewTextStyleNONSelected,
-                              ),
-                              Checkbox(
-                                  checkColor: constants.primaryColor,
-                                  fillColor: MaterialStateColor.resolveWith(
-                                      (states) => Colors.white),
-                                  value: countries[i][1],
-                                  onChanged: (newSelected) {
-                                    countries[i][1] = !countries[i][1];
-                                    setState(() {});
-                                  })
-                            ],
+                        child: ListView.builder(
+                          physics: const BouncingScrollPhysics(),
+                          itemCount: controller.eyeBrandsFilterIndex.value == 1
+                              ? countries.length
+                              : categories.length,
+                          itemBuilder: (c, i) => Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 30,
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                    controller.eyeBrandsFilterIndex.value == 1
+                                        ? countries[i][0]
+                                        : categories[i][0],
+                                    style: textStyle(i)),
+                                Checkbox(
+                                    checkColor: constants.primaryColor,
+                                    fillColor: MaterialStateColor.resolveWith(
+                                        (states) => Colors.white),
+                                    value:
+                                        controller.eyeBrandsFilterIndex.value ==
+                                                1
+                                            ? countries[i][1]
+                                            : categories[i][1],
+                                    onChanged: (newSelected) {
+                                      controller.eyeBrandsFilterIndex.value == 1
+                                          ? countries[i][1] = !countries[i][1]
+                                          : categories[i][1] =
+                                              !categories[i][1];
+                                      setState(() {});
+                                    })
+                              ],
+                            ),
                           ),
                         ),
-                      ))
+                      )
                     ],
                   ),
                 ),
@@ -208,5 +272,17 @@ class _CountryDialogState extends State<CountryDialog> {
         ),
       ),
     );
+  }
+
+  textStyle(int i) {
+    if (controller.eyeBrandsFilterIndex.value == 1) {
+      return countries[i][1]
+          ? constants.eyeBrandsListViewTextStyleSelected
+          : constants.eyeBrandsListViewTextStyleNONSelected;
+    } else {
+      return categories[i][1]
+          ? constants.eyeBrandsListViewTextStyleSelected
+          : constants.eyeBrandsListViewTextStyleNONSelected;
+    }
   }
 }
