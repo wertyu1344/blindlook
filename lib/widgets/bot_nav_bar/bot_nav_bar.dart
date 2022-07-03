@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controller/controller.dart';
+import '../../screens/log_reg_screen/sign_up_screen.dart';
 
 class BotNavBar extends StatelessWidget {
   Controller controller = Get.put(Controller());
@@ -29,11 +30,15 @@ class BotNavBar extends StatelessWidget {
               controllerLogin.isHomePageActive.value == "Home"
                   ? controllerLogin.selectedItemColor.value = Colors.white
                   : controllerLogin.selectedItemColor.value =
-                      Color.fromRGBO(133, 91, 151, 1);
+                      const Color.fromRGBO(133, 91, 151, 1);
               controller.pageIndex.value = i;
               controller.pageIndex.value == 1
                   ? controllerLogin.requestPageIndex.value = 0
                   : null;
+              if (controller.pageIndex.value == 3) {
+                Get.to(() => SignUpScreen());
+                controller.pageIndex.value = 0;
+              }
             },
             currentIndex: controller.pageIndex.value,
             items: [

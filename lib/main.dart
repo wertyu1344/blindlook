@@ -38,11 +38,13 @@ class MyApp extends StatelessWidget {
       SimulationScreen(),
       SettingsScreen(),
     ];
+    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     return GetMaterialApp(
       theme: ThemeData(fontFamily: 'Cera'),
       home: SafeArea(
         child: Obx(
           () => Scaffold(
+              key: _scaffoldKey,
               extendBody: true,
               bottomNavigationBar: SizedBox(height: 80, child: BotNavBar()),
               body: controllerLogin.isLogin == false

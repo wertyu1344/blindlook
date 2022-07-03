@@ -1,13 +1,29 @@
+import 'package:blindlook/controller/controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
-
-  @override
+  SignUpScreen({Key? key}) : super(key: key);
+  var controller = Get.put(Controller());
+  var controllerLogin = Get.put(LoginClass());
   Widget build(BuildContext context) {
+    List<Widget> list = [
+      mainPage(context),
+      numberSection(),
+      phoneVerify(context),
+      nameSection(),
+      mailSection(context),
+      uploadPhotoSection(),
+      lastPage()
+    ];
+
+    return Obx(() =>
+        Scaffold(body: list.elementAt(controllerLogin.signupPageIndex.value)));
+  }
+
+  Scaffold lastPage() {
     return Scaffold(
-        body: Scaffold(
       resizeToAvoidBottomInset: false,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50.0),
@@ -45,21 +61,28 @@ class SignUpScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: const Color.fromRGBO(48, 0, 68, 1),
                     borderRadius: BorderRadius.circular(6)),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Image.asset("assets/images/sign_up/button_shape.png"),
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        "Back to home",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 17,
-                            fontWeight: FontWeight.w500),
+                child: InkWell(
+                  onTap: () {
+                    controller.pageIndex.value = 0;
+                    controllerLogin.signupPageIndex.value = 0;
+                    Get.back();
+                  },
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Image.asset("assets/images/sign_up/button_shape.png"),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          "Back to home",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -67,7 +90,7 @@ class SignUpScreen extends StatelessWidget {
           ],
         ),
       ),
-    ));
+    );
   }
 
   Scaffold uploadPhotoSection() {
@@ -136,21 +159,24 @@ class SignUpScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: const Color.fromRGBO(48, 0, 68, 1),
                   borderRadius: BorderRadius.circular(6)),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Image.asset("assets/images/sign_up/button_shape.png"),
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Complete",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500),
+              child: InkWell(
+                onTap: () => controllerLogin.signupPageIndex++,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset("assets/images/sign_up/button_shape.png"),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        "Complete",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
@@ -159,7 +185,7 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 
-  Scaffold mailSection() {
+  Scaffold mailSection(context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar:
@@ -207,21 +233,29 @@ class SignUpScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: const Color.fromRGBO(48, 0, 68, 1),
                   borderRadius: BorderRadius.circular(6)),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Image.asset("assets/images/sign_up/button_shape.png"),
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Next",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500),
+              child: InkWell(
+                onTap: () {
+                  FocusScopeNode currentFocus = FocusScope.of(context);
+                  currentFocus.unfocus();
+                  Future.delayed(const Duration(milliseconds: 300))
+                      .whenComplete(() => controllerLogin.signupPageIndex++);
+                },
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset("assets/images/sign_up/button_shape.png"),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        "Next",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
@@ -278,21 +312,24 @@ class SignUpScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: const Color.fromRGBO(48, 0, 68, 1),
                   borderRadius: BorderRadius.circular(6)),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Image.asset("assets/images/sign_up/button_shape.png"),
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Next",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500),
+              child: InkWell(
+                onTap: () => controllerLogin.signupPageIndex++,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset("assets/images/sign_up/button_shape.png"),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        "Next",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
@@ -376,21 +413,24 @@ class SignUpScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: const Color.fromRGBO(48, 0, 68, 1),
                   borderRadius: BorderRadius.circular(6)),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Image.asset("assets/images/sign_up/button_shape.png"),
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Verify",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500),
+              child: InkWell(
+                onTap: () => controllerLogin.signupPageIndex++,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset("assets/images/sign_up/button_shape.png"),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        "Verify",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
@@ -446,18 +486,21 @@ class SignUpScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: const Color.fromRGBO(48, 0, 68, 1),
                   borderRadius: BorderRadius.circular(6)),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Image.asset("assets/images/sign_up/button_shape.png"),
-                  const Text(
-                    "Next",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ],
+              child: InkWell(
+                onTap: () => controllerLogin.signupPageIndex++,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset("assets/images/sign_up/button_shape.png"),
+                    const Text(
+                      "Next",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
               ),
             ),
             const SizedBox(height: 50),
@@ -492,18 +535,21 @@ class SignUpScreen extends StatelessWidget {
                 color: const Color.fromRGBO(48, 0, 68, 1),
                 width: 290,
                 height: 50,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Image.asset("assets/images/sign_up/button_shape.png"),
-                    const Text(
-                      "Sign Up",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ],
+                child: InkWell(
+                  onTap: () => controllerLogin.signupPageIndex++,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Image.asset("assets/images/sign_up/button_shape.png"),
+                      const Text(
+                        "Sign Up",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(height: 65),

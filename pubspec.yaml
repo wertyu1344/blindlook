@@ -71,6 +71,7 @@ flutter:
     - assets/images/story/
     - assets/images/eye_brands/
     - assets/images/sign_up/
+    - assets/icons/
 
 
   #   - images/a_dot_ham.jpeg
