@@ -6,10 +6,10 @@ import 'package:get/get.dart';
 import '../../widgets/request_page_widgets/method_type_widgets.dart';
 
 class RequestSelectMethod extends StatefulWidget {
-  final Function downgrade;
-  final Function incrade;
+  final Function goBack;
+  final Function goNext;
   const RequestSelectMethod(
-      {Key? key, required this.downgrade, required this.incrade})
+      {Key? key, required this.goNext, required this.goBack})
       : super(key: key);
 
   @override
@@ -36,7 +36,7 @@ class _RequestSelectMethodState extends State<RequestSelectMethod> {
             children: [
               IconButton(
                 onPressed: () {
-                  widget.downgrade();
+                  widget.goBack();
                 },
                 icon: Image.asset(
                   "assets/images/request_page_images/back.png",
@@ -157,7 +157,7 @@ class _RequestSelectMethodState extends State<RequestSelectMethod> {
             padding: EdgeInsets.symmetric(horizontal: 6),
             child: OutlinedButton(
               onPressed: () {
-                selected != 0 ? widget.incrade() : null;
+                selected != 0 ? widget.goNext(selected) : null;
               },
               style: OutlinedButton.styleFrom(
                 padding: EdgeInsets.zero,

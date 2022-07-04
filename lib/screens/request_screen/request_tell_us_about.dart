@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import '../../constants/constants.dart';
 
 class RequestTellUsAbout extends StatelessWidget {
-  final Function downgrade;
-  final Function incrade;
-  RequestTellUsAbout({Key? key, required this.downgrade, required this.incrade})
+  final Function goBack;
+  final Function goNext;
+  RequestTellUsAbout({Key? key, required this.goBack, required this.goNext})
       : super(key: key);
   Constants constants = Get.find<Constants>();
 
@@ -23,7 +23,7 @@ class RequestTellUsAbout extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: () {
-                  downgrade();
+                  goBack();
                 },
                 icon: Image.asset(
                   "assets/images/request_page_images/back.png",
@@ -131,7 +131,7 @@ class RequestTellUsAbout extends StatelessWidget {
                         BoxDecoration(borderRadius: BorderRadius.circular(10)),
                     child: OutlinedButton(
                       onPressed: () {
-                        incrade();
+                        goNext();
                       },
                       style: OutlinedButton.styleFrom(
                         padding: EdgeInsets.zero,

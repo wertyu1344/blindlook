@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 import '../../widgets/request_page_widgets/play_pause_review.dart';
 
-class RequestRecordVoice extends StatefulWidget {
+class RequestRecordVideo extends StatefulWidget {
   final Function goNext;
   final Function goBack;
   String _printDuration(Duration duration) {
@@ -14,23 +14,23 @@ class RequestRecordVoice extends StatefulWidget {
     return "$twoDigitMinutes:$twoDigitSeconds";
   }
 
-  const RequestRecordVoice({
+  const RequestRecordVideo({
     Key? key,
     required this.goNext,
     required this.goBack,
   }) : super(key: key);
 
   @override
-  State<RequestRecordVoice> createState() => _RequestRecordVoiceState();
+  State<RequestRecordVideo> createState() => _RequestRecordVideoState();
 }
 
-class _RequestRecordVoiceState extends State<RequestRecordVoice> {
+class _RequestRecordVideoState extends State<RequestRecordVideo> {
   Constants constants = Get.put(Constants());
 
   late DateTime? start;
   late DateTime end;
   late Duration totalTime;
-  List photos = ["start_voice", "save", "recorder"];
+  List photos = ["start_camera", "save", "recorder"];
 
   int sayac = 0;
   @override

@@ -5,10 +5,9 @@ import '../../constants/constants.dart';
 import '../../widgets/request_page_widgets/request_tags.dart';
 
 class RequestScreenTagYour extends StatelessWidget {
-  final Function downgrade;
-  final Function incrade;
-  RequestScreenTagYour(
-      {Key? key, required this.downgrade, required this.incrade})
+  final Function goBack;
+  final Function goNext;
+  RequestScreenTagYour({Key? key, required this.goBack, required this.goNext})
       : super(key: key);
   Constants constants = Get.find<Constants>();
 
@@ -26,7 +25,7 @@ class RequestScreenTagYour extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: () {
-                  downgrade();
+                  goBack();
                 },
                 icon: Image.asset(
                   "assets/images/request_page_images/back.png",
@@ -112,7 +111,7 @@ class RequestScreenTagYour extends StatelessWidget {
           ),
           OutlinedButton(
             onPressed: () {
-              incrade();
+              goNext();
             },
             style: OutlinedButton.styleFrom(
               padding: EdgeInsets.zero,
