@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../constants/constants.dart';
 
 class RequestTellUsAbout extends StatelessWidget {
@@ -6,7 +7,7 @@ class RequestTellUsAbout extends StatelessWidget {
   final Function incrade;
   RequestTellUsAbout({Key? key, required this.downgrade, required this.incrade})
       : super(key: key);
-  final Constants constants = Constants();
+  Constants constants = Get.find<Constants>();
 
   @override
   Widget build(BuildContext context) {

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../constants/constants.dart';
 
 class SimulationScreen extends StatelessWidget {
   SimulationScreen({Key? key}) : super(key: key);
-  final Constants constants = Constants();
+  Constants constants = Get.find<Constants>();
 
   @override
   Widget build(BuildContext context) {

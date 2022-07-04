@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class Constants {
+class Constants extends GetxController {
   TextStyle requestTextStyleTitle = const TextStyle(
       color: Color.fromRGBO(48, 0, 68, 1),
       fontSize: 26,

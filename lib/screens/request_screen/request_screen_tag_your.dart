@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../constants/constants.dart';
 import '../../widgets/request_page_widgets/request_tags.dart';
@@ -9,7 +10,7 @@ class RequestScreenTagYour extends StatelessWidget {
   RequestScreenTagYour(
       {Key? key, required this.downgrade, required this.incrade})
       : super(key: key);
-  final Constants constants = Constants();
+  Constants constants = Get.find<Constants>();
 
   @override
   Widget build(BuildContext context) {

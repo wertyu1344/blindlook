@@ -9,7 +9,8 @@ class BotNavBar extends StatelessWidget {
   Controller controller = Get.put(Controller());
   LoginClass controllerLogin = Get.put(LoginClass());
   BotNavBar({Key? key}) : super(key: key);
-  Constants constants = Constants();
+  Constants constants = Get.find<Constants>();
+
   @override
   Widget build(BuildContext context) {
     return ClipRRect(

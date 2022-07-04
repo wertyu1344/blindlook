@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Constants constants = Constants();
+  Constants constants = Get.find<Constants>();
   Controller controller = Get.put(Controller());
   LoginClass controllerLogin = Get.put(LoginClass());
 

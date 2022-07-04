@@ -18,7 +18,8 @@ class _CountryDialogState extends State<CountryDialog> {
     super.dispose();
   }
 
-  final Constants constants = Constants();
+  Constants constants = Get.find<Constants>();
+
   final LoginClass controller = Get.put(LoginClass());
 
   final List<List> countries = [

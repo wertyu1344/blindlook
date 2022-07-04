@@ -1,3 +1,4 @@
+import 'package:blindlook/constants/constants.dart';
 import 'package:blindlook/screens/home_screen/eye_brands_screen/eye_brands_screen.dart';
 import 'package:blindlook/screens/home_screen/home_screen.dart';
 import 'package:blindlook/screens/log_reg_screen/sign_up_screen.dart';
@@ -21,6 +22,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  Constants constants = Get.put(Constants());
+
   Controller controller = Get.put(Controller());
   LoginClass controllerLogin = Get.put(LoginClass());
   @override

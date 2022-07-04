@@ -1,10 +1,12 @@
 import 'package:blindlook/constants/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RequestSuccesfully extends StatelessWidget {
   final Function backToHome;
   RequestSuccesfully({Key? key, required this.backToHome}) : super(key: key);
-  final Constants constants = Constants();
+  Constants constants = Get.find<Constants>();
+
   @override
   Widget build(BuildContext context) {
     return Container(

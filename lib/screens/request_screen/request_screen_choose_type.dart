@@ -13,7 +13,8 @@ class RequestPageChooseRequest extends StatelessWidget {
     required this.itemCount,
   }) : super(key: key);
 
-  final Constants constants = Constants();
+  Constants constants = Get.find<Constants>();
+
   final LoginClass controller = Get.put(LoginClass());
   final int itemCount;
 

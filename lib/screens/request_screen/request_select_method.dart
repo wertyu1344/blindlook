@@ -17,7 +17,8 @@ class RequestSelectMethod extends StatefulWidget {
 }
 
 class _RequestSelectMethodState extends State<RequestSelectMethod> {
-  final Constants constants = Constants();
+  Constants constants = Get.find<Constants>();
+
   final LoginClass controller = Get.find<LoginClass>();
 
   int selected = 0;

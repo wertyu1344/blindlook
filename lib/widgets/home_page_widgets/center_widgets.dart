@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../constants/constants.dart';
 
@@ -8,7 +9,7 @@ class CenterWidgets extends StatelessWidget {
   final String text;
   final int flex;
   var onTap;
-  Constants constants = Constants();
+  Constants constants = Get.find<Constants>();
 
   CenterWidgets(
       {Key? key,

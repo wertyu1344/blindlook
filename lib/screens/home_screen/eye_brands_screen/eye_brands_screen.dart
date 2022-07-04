@@ -16,7 +16,7 @@ class EyeBrands extends StatefulWidget {
 }
 
 class _EyeBrandsState extends State<EyeBrands> {
-  final Constants constants = Constants();
+  Constants constants = Get.find<Constants>();
 
   @override
   Widget build(BuildContext context) {

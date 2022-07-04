@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../constants/constants.dart';
 
 class RequestAppBar extends StatelessWidget {
@@ -8,7 +9,7 @@ class RequestAppBar extends StatelessWidget {
   }) : super(key: key);
 
   final Size size;
-  final Constants constants = Constants();
+  Constants constants = Get.find<Constants>();
 
   @override
   Widget build(BuildContext context) {

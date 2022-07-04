@@ -1,9 +1,11 @@
 import 'package:blindlook/constants/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class EyeBrandsSearchWidget extends StatelessWidget {
   EyeBrandsSearchWidget({Key? key, required this.context}) : super(key: key);
-  final Constants constants = Constants();
+  Constants constants = Get.find<Constants>();
+
   final BuildContext context;
 
   @override

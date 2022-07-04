@@ -1,9 +1,11 @@
 import 'package:blindlook/constants/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RequestWidgets extends StatelessWidget {
   final Function onTab;
-  final Constants constants = Constants();
+  Constants constants = Get.find<Constants>();
+
   final EdgeInsets padding;
   final String imagePath;
 
