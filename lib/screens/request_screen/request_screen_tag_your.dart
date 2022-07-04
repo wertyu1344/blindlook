@@ -1,26 +1,16 @@
-import 'package:blindlook/constants/constants.dart';
-import 'package:blindlook/controller/controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import '../../widgets/request_page_widgets/method_type_widgets.dart';
+import '../../constants/constants.dart';
+import '../../widgets/request_page_widgets/request_tags.dart';
 
-class RequestSelectMethod extends StatefulWidget {
+class RequestScreenTagYour extends StatelessWidget {
   final Function downgrade;
   final Function incrade;
-  const RequestSelectMethod(
+  RequestScreenTagYour(
       {Key? key, required this.downgrade, required this.incrade})
       : super(key: key);
-
-  @override
-  State<RequestSelectMethod> createState() => _RequestSelectMethodState();
-}
-
-class _RequestSelectMethodState extends State<RequestSelectMethod> {
   final Constants constants = Constants();
-  final LoginClass controller = Get.find<LoginClass>();
 
-  int selected = 0;
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -35,7 +25,7 @@ class _RequestSelectMethodState extends State<RequestSelectMethod> {
             children: [
               IconButton(
                 onPressed: () {
-                  widget.downgrade();
+                  downgrade();
                 },
                 icon: Image.asset(
                   "assets/images/request_page_images/back.png",
@@ -55,20 +45,20 @@ class _RequestSelectMethodState extends State<RequestSelectMethod> {
             ],
           ),
           const SizedBox(
-            height: 30,
+            height: 40,
           ),
           Text(
-            "What is your request about?",
+            "Tag your request to help us reach\nthe right audience",
             style: constants.requestTextStyleMedium,
           ),
-          const SizedBox(
-            height: 40,
+          SizedBox(
+            height: 60,
           ),
           TextFormField(
             style: const TextStyle(color: Colors.white),
             cursorColor: Colors.white54,
             decoration: InputDecoration(
-              hintText: "Lorem ipsum dolor...",
+              hintText: "Lorem ipsum",
               hintStyle: TextStyle(
                   color: constants.primaryColor.withOpacity(0.6),
                   fontSize: 20,
@@ -107,65 +97,32 @@ class _RequestSelectMethodState extends State<RequestSelectMethod> {
             ),
           ),
           const SizedBox(
-            height: 45,
+            height: 60,
           ),
-          Text(
-            "Select the method you’ll like to use",
-            style: constants.requestTextStyleMedium,
+          Expanded(
+            child: GridView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemCount: 3,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2, mainAxisExtent: 80),
+                itemBuilder: (x, i) {
+                  return RequestTags();
+                }),
           ),
-          const SizedBox(
-            height: 30,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              MethodType(
-                  selected: selected,
-                  deger: 1,
-                  imagePath: "Just Text",
-                  onTab: (imagePath) {
-                    selected = 1;
-                    setState(() {});
-                  },
-                  padding: EdgeInsets.only(right: 7)),
-              MethodType(
-                  selected: selected,
-                  deger: 2,
-                  imagePath: "Voice Record",
-                  onTab: (imagePath) {
-                    selected = 2;
-
-                    setState(() {});
-                  },
-                  padding: EdgeInsets.only(right: 7)),
-              MethodType(
-                  selected: selected,
-                  deger: 3,
-                  imagePath: "Photo Video",
-                  onTab: (imagePath) {
-                    selected = 3;
-                    setState(() {});
-                  },
-                  padding: EdgeInsets.zero),
-            ],
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 6),
-            child: OutlinedButton(
-              onPressed: () {
-                selected != 0 ? widget.incrade() : null;
-              },
-              style: OutlinedButton.styleFrom(
-                padding: EdgeInsets.zero,
-                alignment: Alignment.center,
-              ),
-              child: Image.asset(
-                  "assets/images/request_page_images/next_button_${selected != 0 ? "" : "NON_"}selectable.png"),
+          OutlinedButton(
+            onPressed: () {
+              incrade();
+            },
+            style: OutlinedButton.styleFrom(
+              padding: EdgeInsets.zero,
+              alignment: Alignment.center,
             ),
+            child: Image.asset("assets/images/request_page_images/send_req.png",
+                fit: BoxFit.fitWidth),
           ),
+          const SizedBox(
+            height: 130,
+          )
         ],
       ),
     );

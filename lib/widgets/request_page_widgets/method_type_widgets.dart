@@ -2,14 +2,18 @@ import 'package:blindlook/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class MethodType extends StatelessWidget {
+  final int selected;
   final EdgeInsets padding;
   final Function onTab;
   final String imagePath;
+  final int deger;
   MethodType(
       {Key? key,
       required this.imagePath,
       required this.onTab,
-      required this.padding})
+      required this.padding,
+      required this.deger,
+      required this.selected})
       : super(key: key);
   final Constants constants = Constants();
 
@@ -26,7 +30,9 @@ class MethodType extends StatelessWidget {
             width: size.width / 3.4,
             height: size.height / 3.4,
             decoration: BoxDecoration(
-                color: constants.primaryColor,
+                color: selected == deger || selected == 0
+                    ? constants.primaryColor
+                    : constants.primaryColor.withOpacity(0.6),
                 borderRadius: BorderRadiusDirectional.circular(15)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
