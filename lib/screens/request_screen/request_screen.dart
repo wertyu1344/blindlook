@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'request_successfully.dart';
 
 class RequestScreen extends StatefulWidget {
-  RequestScreen({Key? key}) : super(key: key);
+  const RequestScreen({Key? key}) : super(key: key);
 
   @override
   State<RequestScreen> createState() => _RequestScreenState();
@@ -19,6 +19,10 @@ class _RequestScreenState extends State<RequestScreen> {
 
   @override
   Widget build(BuildContext context) {
+    return Scaffold(resizeToAvoidBottomInset: true, body: body());
+  }
+
+  body() {
     switch (controller.requestPageIndex.value) {
       case 0:
         return RequestPageChooseRequest(
