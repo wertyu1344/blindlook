@@ -27,8 +27,10 @@ class _RequestScreenState extends State<RequestScreen> {
     switch (controller.requestPageIndex.value) {
       case 0:
         return RequestRecordVoice(
-          downgrade: () {},
-          incrade: () {},
+          goBack: () {
+            controller.requestPageIndex - 1;
+          },
+          goNext: () {},
         );
       /*   return RequestPageChooseRequest(
           itemCount: 4,
