@@ -1,4 +1,5 @@
 import 'package:blindlook/controller/controller.dart';
+import 'package:blindlook/screens/request_screen/request_record_voice.dart';
 import 'package:blindlook/screens/request_screen/request_screen_choose_type.dart';
 import 'package:blindlook/screens/request_screen/request_screen_tag_your.dart';
 import 'package:blindlook/screens/request_screen/request_select_method.dart';
@@ -25,13 +26,17 @@ class _RequestScreenState extends State<RequestScreen> {
   body() {
     switch (controller.requestPageIndex.value) {
       case 0:
-        return RequestPageChooseRequest(
+        return RequestRecordVoice(
+          downgrade: () {},
+          incrade: () {},
+        );
+      /*   return RequestPageChooseRequest(
           itemCount: 4,
           incradeIndex: () {
             controller.requestPageIndex.value++;
             setState(() {});
           },
-        );
+        ); */
 
       case 1:
         return RequestSelectMethod(
