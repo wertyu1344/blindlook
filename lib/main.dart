@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> pages = [
       HomePage(),
+      SettingsScreen(),
       RequestScreen(),
       NewsScreen(),
       SignUpScreen(),
@@ -38,8 +39,8 @@ class MyApp extends StatelessWidget {
     List<Widget> pagesSingIn = [
       HomePage(),
       RequestScreen(),
-      SimulationScreen(),
       SettingsScreen(),
+      SimulationScreen(),
     ];
     final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     return GetMaterialApp(
