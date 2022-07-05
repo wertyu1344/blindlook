@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import '../../constants/country_code.dart';
+
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({Key? key}) : super(key: key);
   var controller = Get.put(Controller());
+  var textFormControllerName = TextEditingController();
+  var textFormControllerMail = TextEditingController();
   var controllerLogin = Get.put(LoginClass());
   Widget build(BuildContext context) {
     List<Widget> list = [
@@ -212,6 +216,7 @@ class SignUpScreen extends StatelessWidget {
             ),
             const SizedBox(height: 157.5),
             TextFormField(
+              controller: textFormControllerMail,
               decoration: InputDecoration(
                   hintText: "almeida@gmail.com",
                   hintStyle: TextStyle(
@@ -238,7 +243,10 @@ class SignUpScreen extends StatelessWidget {
                   FocusScopeNode currentFocus = FocusScope.of(context);
                   currentFocus.unfocus();
                   Future.delayed(const Duration(milliseconds: 300))
-                      .whenComplete(() => controllerLogin.signupPageIndex++);
+                      .whenComplete(() {
+                    controllerLogin.signupPageIndex++;
+                    textFormControllerMail.clear();
+                  });
                 },
                 child: Stack(
                   alignment: Alignment.center,
@@ -291,6 +299,7 @@ class SignUpScreen extends StatelessWidget {
             ),
             const SizedBox(height: 157.5),
             TextFormField(
+              controller: textFormControllerName,
               decoration: InputDecoration(
                   hintText: "Almedia Silva",
                   hintStyle: TextStyle(
@@ -313,7 +322,10 @@ class SignUpScreen extends StatelessWidget {
                   color: const Color.fromRGBO(48, 0, 68, 1),
                   borderRadius: BorderRadius.circular(6)),
               child: InkWell(
-                onTap: () => controllerLogin.signupPageIndex++,
+                onTap: () {
+                  textFormControllerName.clear();
+                  controllerLogin.signupPageIndex++;
+                },
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
@@ -439,72 +451,100 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 
-  Scaffold numberSection() {
-    return Scaffold(
-      appBar:
-          AppBar(backgroundColor: Colors.transparent, elevation: 0, actions: [
-        InkWell(
-          child: Image.asset(
-            "assets/icons/message-question.png",
-            width: 24,
-          ),
-        ),
-        const SizedBox(width: 25),
-      ]),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 50.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              "What’s Your\nPhone Number?",
-              style: TextStyle(
-                  color: Color.fromRGBO(48, 0, 68, 1),
-                  fontSize: 22,
-                  fontWeight: FontWeight.w500),
+  numberSection() {
+    return Obx(
+      () => Scaffold(
+        appBar:
+            AppBar(backgroundColor: Colors.transparent, elevation: 0, actions: [
+          InkWell(
+            child: Image.asset(
+              "assets/icons/message-question.png",
+              width: 24,
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 52.15, left: 54),
-              child: Text(
-                "You’ll receive 4 digit code\n    to verify your number",
+          ),
+          const SizedBox(width: 25),
+        ]),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 50.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                "What’s Your\nPhone Number?",
                 style: TextStyle(
                     color: Color.fromRGBO(48, 0, 68, 1),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w300),
+                    fontSize: 22,
+                    fontWeight: FontWeight.w500),
               ),
-            ),
-            const SizedBox(height: 61),
-            TextFormField(
-              keyboardType: TextInputType.phone,
-              autofocus: true,
-            ),
-            const SizedBox(height: 100),
-            const Spacer(),
-            Container(
-              width: 290,
-              height: 50,
-              decoration: BoxDecoration(
-                  color: const Color.fromRGBO(48, 0, 68, 1),
-                  borderRadius: BorderRadius.circular(6)),
-              child: InkWell(
-                onTap: () => controllerLogin.signupPageIndex++,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Image.asset("assets/images/sign_up/button_shape.png"),
-                    const Text(
-                      "Next",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ],
+              const Padding(
+                padding: EdgeInsets.only(top: 52.15, left: 54),
+                child: Text(
+                  "You’ll receive 4 digit code\n    to verify your number",
+                  style: TextStyle(
+                      color: Color.fromRGBO(48, 0, 68, 1),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w300),
                 ),
               ),
-            ),
-            const SizedBox(height: 50),
-          ],
+              const SizedBox(height: 61),
+              Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton(
+                          style: TextStyle(
+                              color: Color.fromRGBO(164, 164, 164, 1)),
+                          value: controllerLogin.phoneCode.value,
+                          items: CountrConst.countryList.map((String items) {
+                            return DropdownMenuItem(
+                              value: items,
+                              child: Text(items),
+                            );
+                          }).toList(),
+                          onChanged: (String? a) {
+                            controllerLogin.phoneCode.value = a!;
+                          }),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: TextFormField(
+                      decoration: InputDecoration(border: InputBorder.none),
+                      keyboardType: TextInputType.phone,
+                      autofocus: true,
+                    ),
+                  ),
+                ],
+              ),
+              Divider(),
+              const SizedBox(height: 100),
+              Container(
+                width: 290,
+                height: 50,
+                decoration: BoxDecoration(
+                    color: const Color.fromRGBO(48, 0, 68, 1),
+                    borderRadius: BorderRadius.circular(6)),
+                child: InkWell(
+                  onTap: () => controllerLogin.signupPageIndex++,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Image.asset("assets/images/sign_up/button_shape.png"),
+                      const Text(
+                        "Next",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 50),
+            ],
+          ),
         ),
       ),
     );
@@ -532,7 +572,9 @@ class SignUpScreen extends StatelessWidget {
           Column(
             children: [
               Container(
-                color: const Color.fromRGBO(48, 0, 68, 1),
+                decoration: BoxDecoration(
+                    color: const Color.fromRGBO(48, 0, 68, 1),
+                    borderRadius: BorderRadius.circular(6)),
                 width: 290,
                 height: 50,
                 child: InkWell(

@@ -10,6 +10,10 @@ class Controller extends GetxController {
   var homepageCenter3 = "Request".obs;
   var homePageCenter4 = "News".obs;
   var homePageCenter5 = "SignUp".obs;
+  var isNotification = true.obs;
+  var notificationText = "".obs;
+  var notificationDetail = "".obs;
+  var isClickedNotification = false.obs;
 }
 
 class LoginClass extends GetxController {
@@ -21,4 +25,5 @@ class LoginClass extends GetxController {
   var requestPageIndex = 0.obs;
   var signupPageIndex = 0.obs;
   var resquestType = "";
+  var phoneCode = "+93".obs;
 }

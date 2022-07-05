@@ -39,8 +39,8 @@ class MyApp extends StatelessWidget {
     List<Widget> pagesSingIn = [
       HomePage(),
       RequestScreen(),
-      SettingsScreen(),
       SimulationScreen(),
+      SettingsScreen(),
     ];
     final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     return GetMaterialApp(
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
           () => Scaffold(
               key: _scaffoldKey,
               extendBody: true,
-              bottomNavigationBar: SizedBox(height: 80, child: BotNavBar()),
+              bottomNavigationBar: BotNavBar(),
               body: controllerLogin.isLogin == false
                   ? pages.elementAt(controller.pageIndex.value)
                   : pagesSingIn.elementAt(controller.pageIndex.value)),

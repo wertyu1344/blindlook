@@ -73,6 +73,7 @@ flutter:
     - assets/images/sign_up/
     - assets/icons/
     - assets/images/settings_page/
+    - assets/images/notification
 
 
   #   - images/a_dot_ham.jpeg
