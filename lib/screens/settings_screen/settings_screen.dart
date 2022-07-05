@@ -1,4 +1,5 @@
 import 'package:blindlook/constants/constants.dart';
+import 'package:blindlook/screens/settings_screen/password_change/password_change_page.dart';
 import 'package:blindlook/widgets/settings_page_widgets/settings_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -60,7 +61,14 @@ class SettingsScreen extends StatelessWidget {
                       ),
                     )
                   : SettingsWidget(
-                      onTapCallBack: () {}, imagePath: settings[index]))
+                      onTapCallBack: () {
+                        index == 2
+                            ? Get.to(
+                                PasswordChange(),
+                              )
+                            : null;
+                      },
+                      imagePath: settings[index]))
         ],
       ),
     );
