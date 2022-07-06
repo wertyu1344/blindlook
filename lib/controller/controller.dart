@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 
 class Controller extends GetxController {
   LoginClass controller = Get.put(LoginClass());
+  var loyalityPageIndex = 0.obs;
+  var priceName = "".obs;
   var pageIndex = 0.obs;
   double butonlarArasiBosluk = 10;
   var homepageCenter1 = "Home".obs;

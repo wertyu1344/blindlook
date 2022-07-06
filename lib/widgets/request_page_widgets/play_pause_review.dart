@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../constants/constants.dart';
 
 class PlayPauseReview extends StatelessWidget {
@@ -36,7 +37,10 @@ class PlayPauseReview extends StatelessWidget {
             height: 60,
             child: Text(content,
                 style: const TextStyle(
-                    fontFamily: "Cera", fontSize: 20, color: Colors.white)),
+                  fontFamily: "Cera",
+                  fontSize: 20,
+                  color: Colors.white,
+                )),
           ),
         ),
       ),
