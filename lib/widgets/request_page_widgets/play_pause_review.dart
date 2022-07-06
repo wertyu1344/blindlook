@@ -17,28 +17,26 @@ class PlayPauseReview extends StatelessWidget {
     return Expanded(
       child: Padding(
         padding: content == "Play"
-            ? EdgeInsets.only(right: 4.0)
+            ? const EdgeInsets.only(right: 4.0)
             : content == "Pause"
-                ? EdgeInsets.symmetric(horizontal: 4.0)
-                : EdgeInsets.only(left: 4),
+                ? const EdgeInsets.symmetric(horizontal: 4.0)
+                : const EdgeInsets.only(left: 4),
         child: InkWell(
           onTap: () => callBack(content),
           child: Container(
             alignment: Alignment.center,
-            child: Text(content,
-                style: TextStyle(
-                    fontFamily: "Cera",
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w200)),
             decoration: BoxDecoration(
                 color: constants.primaryColor,
                 borderRadius: content == "Play"
-                    ? BorderRadius.only(topLeft: Radius.circular(16))
+                    ? const BorderRadius.only(topLeft: Radius.circular(16))
                     : content == "Pause"
                         ? null
-                        : BorderRadius.only(topRight: Radius.circular(16))),
+                        : const BorderRadius.only(
+                            topRight: Radius.circular(16))),
             height: 60,
+            child: Text(content,
+                style: const TextStyle(
+                    fontFamily: "Cera", fontSize: 20, color: Colors.white)),
           ),
         ),
       ),
