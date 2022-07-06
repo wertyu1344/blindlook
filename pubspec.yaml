@@ -73,7 +73,9 @@ flutter:
     - assets/images/sign_up/
     - assets/icons/
     - assets/images/settings_page/
-    - assets/images/notification
+    - assets/images/notification/
+    - assets/images/loyality/
+
 
 
   #   - images/a_dot_ham.jpeg
@@ -93,8 +95,6 @@ flutter:
     - family: Cera
       fonts:
         - asset: assets/fonts/Cera_Pro_Medium.ttf
-        - asset: assets/fonts/Cera_Pro_Medium.ttf
-        - weight: 200
         - asset: assets/fonts/Cera_Pro_Bold.ttf
           weight: 500
         - asset: assets/fonts/Cera_Pro_Light.ttf

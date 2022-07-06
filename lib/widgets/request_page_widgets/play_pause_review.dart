@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../constants/constants.dart';
 
 class PlayPauseReview extends StatelessWidget {
@@ -25,12 +26,6 @@ class PlayPauseReview extends StatelessWidget {
           onTap: () => callBack(content),
           child: Container(
             alignment: Alignment.center,
-            child: Text(content,
-                style: TextStyle(
-                    fontFamily: "Cera",
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w200)),
             decoration: BoxDecoration(
                 color: constants.primaryColor,
                 borderRadius: content == "Play"
@@ -39,6 +34,12 @@ class PlayPauseReview extends StatelessWidget {
                         ? null
                         : BorderRadius.only(topRight: Radius.circular(16))),
             height: 60,
+            child: Text(content,
+                style: const TextStyle(
+                  fontFamily: "Cera",
+                  fontSize: 20,
+                  color: Colors.white,
+                )),
           ),
         ),
       ),

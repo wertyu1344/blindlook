@@ -1,6 +1,7 @@
 import 'package:blindlook/controller/controller.dart';
 import 'package:blindlook/screens/home_screen/eye_brands_screen/eye_brands_screen.dart';
 import 'package:blindlook/screens/log_reg_screen/sign_up_screen.dart';
+import 'package:blindlook/screens/loyality/loyality.dart';
 import 'package:blindlook/widgets/home_page_widgets/center_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,7 +30,9 @@ class _HomePageState extends State<HomePage> {
           ? mainHomePage()
           : controllerLogin.isHomePageActive.value == "EyeBrands"
               ? EyeBrands()
-              : SizedBox(),
+              : controllerLogin.isHomePageActive.value == "Loyality"
+                  ? LoyalityScreen()
+                  : SizedBox(),
     );
   }
 
@@ -144,9 +147,15 @@ class _HomePageState extends State<HomePage> {
                             controllerLogin.isLogin ? "Loyalty" : "SignUp",
                         flex: 10,
                         padding: EdgeInsets.zero,
-                        onTap: () => controller.homePageCenter5 == "SignUp"
-                            ? Get.to(SignUpScreen())
-                            : null,
+                        onTap: () {
+                          if (controller.homePageCenter5.value == "SignUp") {
+                            Get.to(SignUpScreen());
+                          } else {
+                            controllerLogin.isHomePageActive.value = "Loyality";
+                            controllerLogin.selectedItemColor.value =
+                                const Color.fromRGBO(133, 91, 151, 1);
+                          }
+                        },
                         text: controller.homePageCenter5.value,
                       ),
                       buildSizedBox(h: 80)
