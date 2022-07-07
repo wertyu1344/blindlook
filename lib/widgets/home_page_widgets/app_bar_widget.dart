@@ -1,5 +1,4 @@
 import 'package:blindlook/widgets/notification/notification.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatelessWidget {
