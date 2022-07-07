@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import '../../widgets/request_page_widgets/play_pause_review.dart';
 
 class SimulationVoicePage extends StatefulWidget {
-  final String 
   String _printDuration(Duration duration) {
     String twoDigits(int n) => n.toString().padLeft(2, "0");
     String twoDigitMinutes = twoDigits(duration.inMinutes.remainder(60));
@@ -66,10 +65,10 @@ class _SimulationVoicePageState extends State<SimulationVoicePage> {
             const SizedBox(
               height: 40,
             ),
-            Text(
-              "$productName/$version",
+            const Text(
+              "", // "$productName/$version",
               textAlign: TextAlign.start,
-              style: const TextStyle(
+              style: TextStyle(
                   fontFamily: "Cera",
                   color: Color.fromRGBO(164, 164, 164, 1),
                   fontSize: 24),

@@ -4,6 +4,8 @@ import 'package:blindlook/screens/simulation_screen/simulation_voice_screen.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../widgets/simulation_page_widgets/simulations_widget.dart';
+
 class VoicesPage extends StatelessWidget {
   VoicesPage(
       {Key? key,
