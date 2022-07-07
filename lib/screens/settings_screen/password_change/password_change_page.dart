@@ -53,9 +53,9 @@ class PasswordChange extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          PasswordTextField(),
-          PasswordTextField(),
-          PasswordTextField(),
+          PasswordTextField(controller1),
+          PasswordTextField(controller2),
+          PasswordTextField(controller3),
           SizedBox(
             height: 60,
           ),

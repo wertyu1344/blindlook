@@ -66,7 +66,7 @@ class _RequestSelectMethodState extends State<RequestSelectMethod> {
             height: 40,
           ),
           TextFormField(
-            style: const TextStyle(color: Colors.white),
+            style: TextStyle(color: constants.primaryColor),
             cursorColor: Colors.white54,
             decoration: InputDecoration(
               hintText: "Lorem ipsum dolor...",

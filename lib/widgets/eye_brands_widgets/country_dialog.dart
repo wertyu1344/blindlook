@@ -122,7 +122,7 @@ class _CountryDialogState extends State<CountryDialog> {
                         ),
                         child: controller.eyeBrandsFilterIndex.value == 1
                             ? TextFormField(
-                                style: const TextStyle(color: Colors.white),
+                                style: TextStyle(color: constants.primaryColor),
                                 cursorColor: Colors.white54,
                                 decoration: const InputDecoration(
                                   hintText: "Search...",
@@ -172,7 +172,7 @@ class _CountryDialogState extends State<CountryDialog> {
                                 ),
                               )
                             : TextFormField(
-                                style: const TextStyle(color: Colors.white),
+                                style: TextStyle(color: constants.primaryColor),
                                 cursorColor: Colors.white54,
                                 decoration: const InputDecoration(
                                   hintText: "Search..",

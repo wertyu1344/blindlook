@@ -55,7 +55,7 @@ class RequestScreenTagYour extends StatelessWidget {
             height: 60,
           ),
           TextFormField(
-            style: const TextStyle(color: Colors.white),
+            style: TextStyle(color: constants.primaryColor),
             cursorColor: Colors.white54,
             decoration: InputDecoration(
               hintText: "Lorem ipsum",

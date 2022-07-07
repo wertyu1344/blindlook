@@ -55,7 +55,7 @@ class RequestTellUsAbout extends StatelessWidget {
           TextFormField(
             minLines: 16,
             maxLines: 16,
-            style: const TextStyle(color: Colors.white),
+            style: TextStyle(color: constants.primaryColor),
             cursorColor: Colors.white54,
             decoration: InputDecoration(
               hintText: "Tell us about your experiences;",

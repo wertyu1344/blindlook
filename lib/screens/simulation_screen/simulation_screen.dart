@@ -1,7 +1,9 @@
+import 'package:blindlook/models/simulaton_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../constants/constants.dart';
+import '../../widgets/simulation_page_widgets/simulations.dart';
 
 class SimulationScreen extends StatelessWidget {
   SimulationScreen({Key? key}) : super(key: key);
@@ -67,32 +69,39 @@ class SimulationScreen extends StatelessWidget {
               itemCount: 20,
               itemBuilder: (context, index) {
                 return Padding(
-                    padding: const EdgeInsets.only(bottom: 8.0),
-                    child: ListTile(
-                      leading: Container(
-                          width: size.width / 7,
-                          height: size.width / 7,
-                          decoration: const BoxDecoration(
-                            color: Color.fromRGBO(242, 242, 242, 1),
-                          ),
-                          child: Center(
-                            child: Image.asset(
-                              "assets/images/simulation_page_images/amazon.png",
-                              width: 26,
-                              height: 26,
-                            ),
-                          )),
-                      title: Text(
-                        "Amazon$index",
-                        style: constants.requestTextStyleMedium,
-                      ),
-                      subtitle: Text(
-                        "E-Commerce",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            color: constants.primaryColor),
-                      ),
-                    ));
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Simulations(
+                    simulationsModel: SimulationsModel(
+                      title: "Amazon",
+                      subtitle: "E-Commerce",
+                      icon: Image.asset(
+                          "assets/images/simulation_page_images/amazon.png"),
+                      products: {
+                        "Washing Machine": [
+                          "537XYZ",
+                          "537XYZ",
+                          "537XYZ",
+                          "537XYZ",
+                          "537XYZ",
+                          "537XYZ"
+                        ],
+                        "Fridge": ["asd", "qwe", "zxc", "dfgfd"],
+                        "TVs": [for (var i = 0; i == 15; i++) "537XYZ"],
+                        "Iron": [for (var i = 0; i == 15; i++) "537XYZ"],
+                        "PC": [for (var i = 0; i == 15; i++) "537XYZ"],
+                        "Oven": ["asd", "qwe", "zxc", "dfgfd"],
+                        "Washing Machin": [
+                          for (var i = 0; i == 15; i++) "537XYZ"
+                        ],
+                        "Fridg": ["asd", "qwe", "zxc", "dfgfd"],
+                        "TV": [for (var i = 0; i == 15; i++) "537XYZ"],
+                        "Ironn": [for (var i = 0; i == 15; i++) "537XYZ"],
+                        "Washing": [for (var i = 0; i == 15; i++) "537XYZ"]
+                      },
+                    ),
+                    index: index,
+                  ),
+                );
               },
             ),
           )
