@@ -217,7 +217,7 @@ class SignUpScreen extends StatelessWidget {
             const SizedBox(height: 157.5),
             TextFormField(
               controller: textFormControllerMail,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   hintText: "almeida@gmail.com",
                   hintStyle: TextStyle(
                       color: Color.fromRGBO(48, 0, 68, 1),

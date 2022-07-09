@@ -82,7 +82,7 @@ class _SimulationVoicePageState extends State<SimulationVoicePage> {
                   title: "Audio Simulation",
                   ontap: (deger) {
                     widget.selectedButton = deger;
-                    print(widget.selectedButton);
+
                     setState(() {});
                   },
                 ),
@@ -191,6 +191,7 @@ class TabWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return InkWell(
       onTap: () {
         ontap(buttonValue);
@@ -204,7 +205,7 @@ class TabWidget extends StatelessWidget {
           if (buttonValue == selected)
             Container(
               height: 3,
-              width: 170,
+              width: size.width / 2,
               color: constants.primaryColor,
             )
         ],

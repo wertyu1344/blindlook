@@ -1,4 +1,5 @@
 import 'package:blindlook/constants/constants.dart';
+import 'package:blindlook/screens/eye_menu_screen/eye_menu_screen.dart';
 import 'package:blindlook/screens/home_screen/eye_brands_screen/eye_brands_screen.dart';
 import 'package:blindlook/screens/home_screen/home_screen.dart';
 import 'package:blindlook/screens/log_reg_screen/sign_up_screen.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> pages = [
-      HomePage(),
+      EyeMenuPage(),
       SettingsScreen(),
       RequestScreen(),
       NewsScreen(),

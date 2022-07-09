@@ -21,10 +21,11 @@ class Controller extends GetxController {
 class LoginClass extends GetxController {
   var isHomePageActive = "Home".obs;
   var selectedItemColor = Colors.white.obs;
-  bool isLogin = true;
+  bool isLogin = false;
   var eyeBrandsVisible = true.obs;
   var eyeBrandsFilterIndex = 0.obs;
   var requestPageIndex = 0.obs;
+  var simulationPageIndex = 0.obs;
   var signupPageIndex = 0.obs;
   var resquestType = "";
   var phoneCode = "+93".obs;
