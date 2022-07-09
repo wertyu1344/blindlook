@@ -16,12 +16,16 @@ class Controller extends GetxController {
   var notificationText = "".obs;
   var notificationDetail = "".obs;
   var isClickedNotification = false.obs;
+
+  //Blog
+  var blogPostTitle = "".obs;
+  var blogIndex = 0.obs;
 }
 
 class LoginClass extends GetxController {
   var isHomePageActive = "Home".obs;
   var selectedItemColor = Colors.white.obs;
-  bool isLogin = false;
+  bool isLogin = true;
   var eyeBrandsVisible = true.obs;
   var eyeBrandsFilterIndex = 0.obs;
   var requestPageIndex = 0.obs;

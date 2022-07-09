@@ -1,7 +1,9 @@
 import 'package:blindlook/controller/controller.dart';
+import 'package:blindlook/screens/about_us/about_us.dart';
 import 'package:blindlook/screens/home_screen/eye_brands_screen/eye_brands_screen.dart';
 import 'package:blindlook/screens/log_reg_screen/sign_up_screen.dart';
 import 'package:blindlook/screens/loyality/loyality.dart';
+import 'package:blindlook/screens/news_screen/news_screen.dart';
 import 'package:blindlook/widgets/home_page_widgets/center_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -25,15 +27,15 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => controllerLogin.isHomePageActive.value == "Home"
-          ? mainHomePage()
-          : controllerLogin.isHomePageActive.value == "EyeBrands"
-              ? EyeBrands()
-              : controllerLogin.isHomePageActive.value == "Loyality"
-                  ? LoyalityScreen()
-                  : SizedBox(),
-    );
+    return Obx(() => controllerLogin.isHomePageActive.value == "Home"
+        ? mainHomePage()
+        : controllerLogin.isHomePageActive.value == "EyeBrands"
+            ? EyeBrands()
+            : controllerLogin.isHomePageActive.value == "Loyality"
+                ? LoyalityScreen()
+                : controllerLogin.isHomePageActive.value == "News"
+                    ? NewsScreen():controllerLogin.isHomePageActive.value == "AboutUs"?AboutUsScreen()
+                    : SizedBox());
   }
 
   Padding mainHomePage() {
@@ -112,7 +114,12 @@ class _HomePageState extends State<HomePage> {
                           imagePath: "BlindLook",
                           flex: 10,
                           padding: EdgeInsets.only(right: butonlarArasiBosluk),
-                          onTap: null,
+                          onTap: (){
+                            controllerLogin.selectedItemColor.value =
+                            const Color.fromRGBO(133, 91, 151, 1);
+                            controllerLogin.isHomePageActive.value =
+                            "AboutUs";
+                          },
                           text: controller.homepageCenter2.value,
                         ),
                         buildSizedBox(h: 80)
@@ -139,7 +146,11 @@ class _HomePageState extends State<HomePage> {
                         imagePath: "News",
                         flex: 10,
                         padding: EdgeInsets.only(bottom: butonlarArasiBosluk),
-                        onTap: null,
+                        onTap: () {
+                          controllerLogin.isHomePageActive.value = "News";
+                          controllerLogin.selectedItemColor.value =
+                              const Color.fromRGBO(133, 91, 151, 1);
+                        },
                         text: controller.homePageCenter4.value,
                       ),
                       CenterWidgets(

@@ -54,14 +54,6 @@ class LoyalityScreen extends StatelessWidget {
                     color: Color.fromRGBO(164, 164, 164, 1), fontSize: 17),
               ),
               const SizedBox(height: 29),
-              Container(
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                child: Image.asset(
-                  "assets/images/loyality/migros.png",
-                  height: 340,
-                ),
-              ),
               SizedBox(height: 51),
               InkWell(
                 onTap: () => controller.loyalityPageIndex.value = 1,
@@ -98,7 +90,7 @@ class LoyalityScreen extends StatelessWidget {
                   Expanded(
                     child: InkWell(
                         onTap: () {
-                          controller.loyalityPageIndex.value=1;
+                          controller.loyalityPageIndex.value = 1;
                         },
                         child: Container(
                           height: 50,
