@@ -74,8 +74,12 @@ class VoicesPage extends StatelessWidget {
                   child: ListView.builder(
                     physics: const BouncingScrollPhysics(),
                     itemCount: 15,
-                    itemBuilder: (context, index) =>
-                        SimulationsWidget(constants: constants),
+                    itemBuilder: (context, index) => SimulationsWidget(
+                      constants: constants,
+                      productName: productName,
+                      version: version,
+                      simulationsModel: simulationsModel,
+                    ),
                   ),
                 ),
               ),
