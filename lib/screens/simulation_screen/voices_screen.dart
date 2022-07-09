@@ -64,7 +64,7 @@ class VoicesPage extends StatelessWidget {
                 style: const TextStyle(
                     fontFamily: "Cera",
                     color: Color.fromRGBO(164, 164, 164, 1),
-                    fontSize: 24),
+                    fontSize: 21),
               ),
               const SizedBox(height: 10),
               Expanded(

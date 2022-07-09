@@ -61,7 +61,7 @@ class RequestScreenTagYour extends StatelessWidget {
               hintText: "Lorem ipsum",
               hintStyle: TextStyle(
                   color: constants.primaryColor.withOpacity(0.6),
-                  fontSize: 20,
+                  fontSize: 14,
                   fontStyle: FontStyle.italic),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(16)),

@@ -135,7 +135,7 @@ class _RequestRecordVideoState extends State<RequestRecordVideo> {
                             widget._printDuration(totalTime),
                             style: const TextStyle(
                                 fontFamily: "Cera",
-                                fontSize: 65,
+                                fontSize: 15,
                                 fontWeight: FontWeight.w100,
                                 color: Colors.white),
                           ),

@@ -50,7 +50,7 @@ class MethodType extends StatelessWidget {
                 Text(
                   imagePath.replaceAll(" ", "\n"),
                   style:
-                      constants.homePageContentTextStyle.copyWith(fontSize: 20),
+                      constants.homePageContentTextStyle.copyWith(fontSize: 16),
                 )
               ],
             )),

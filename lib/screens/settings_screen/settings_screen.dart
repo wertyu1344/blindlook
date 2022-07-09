@@ -56,7 +56,7 @@ class SettingsScreen extends StatelessWidget {
                       child: Text(
                         settings[index],
                         style: const TextStyle(
-                            fontSize: 22,
+                            fontSize: 21,
                             color: Color.fromRGBO(164, 164, 164, 1)),
                       ),
                     )

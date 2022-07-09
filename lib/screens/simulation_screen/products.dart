@@ -57,7 +57,7 @@ class ProductPage extends StatelessWidget {
                 style: TextStyle(
                     fontFamily: "Cera",
                     color: Color.fromRGBO(164, 164, 164, 1),
-                    fontSize: 24),
+                    fontSize: 21),
               ),
               const SizedBox(height: 10),
               Expanded(
@@ -111,7 +111,7 @@ class Products extends StatelessWidget {
           },
           child: Text(
             mapKey,
-            style: constants.requestTextStyleTitle.copyWith(fontSize: 22),
+            style: constants.requestTextStyleTitle.copyWith(fontSize: 20),
           ),
         ));
   }

@@ -62,7 +62,7 @@ class VersionsPage extends StatelessWidget {
                 style: const TextStyle(
                     fontFamily: "Cera",
                     color: Color.fromRGBO(164, 164, 164, 1),
-                    fontSize: 24),
+                    fontSize: 21),
               ),
               const SizedBox(height: 10),
               versions == null
@@ -123,7 +123,7 @@ class Versions extends StatelessWidget {
           },
           child: Text(
             version,
-            style: constants.requestTextStyleTitle.copyWith(fontSize: 22),
+            style: constants.requestTextStyleTitle.copyWith(fontSize: 20),
           ),
         ));
   }

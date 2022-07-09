@@ -51,7 +51,7 @@ class SignUpScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Color.fromRGBO(48, 0, 68, 1),
-                      fontSize: 17,
+                      fontSize: 15,
                       fontWeight: FontWeight.w500),
                 ),
               ],

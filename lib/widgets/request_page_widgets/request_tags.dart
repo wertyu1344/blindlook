@@ -18,7 +18,8 @@ class RequestTags extends StatelessWidget {
         ),
         child: Text(
           "Lorem Ipsum",
-          style: TextStyle(fontSize: 20, color: constants.primaryColor),
+          style: TextStyle(fontSize: 16, color: constants.primaryColor),
+          textAlign: TextAlign.center,
         ),
       ),
     );

@@ -28,7 +28,7 @@ class SettingsWidget extends StatelessWidget {
             Text(
               imagePath,
               style: constants.requestTextStyleMedium.copyWith(
-                fontSize: 20,
+                fontSize: 18,
               ),
             ),
           ],
