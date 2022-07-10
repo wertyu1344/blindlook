@@ -1,3 +1,4 @@
+import 'package:blindlook/models/store_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,9 +25,12 @@ class LoginClass extends GetxController {
   bool isLogin = false;
   var eyeBrandsVisible = true.obs;
   var eyeBrandsFilterIndex = 0.obs;
-  var requestPageIndex = 0.obs;
-  var simulationPageIndex = 0.obs;
+
   var signupPageIndex = 0.obs;
   var resquestType = "";
   var phoneCode = "+93".obs;
+  var requestPageIndex = 0.obs;
+  var simulationPageIndex = 0.obs;
+  var eyeMenuPageIndex = 0.obs;
+  late StoreModel selectedStore;
 }

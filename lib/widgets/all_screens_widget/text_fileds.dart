@@ -19,7 +19,9 @@ class TextFeilds extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       onChanged: (newText) {
-        //TODO
+        onchange(newText);
+        controller.selection = TextSelection.fromPosition(
+            TextPosition(offset: controller.text.length));
       },
       controller: controller,
       style: TextStyle(color: constants.primaryColor, fontSize: 16),

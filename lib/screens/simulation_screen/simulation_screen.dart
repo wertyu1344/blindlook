@@ -84,8 +84,15 @@ class SimulationScreen extends StatelessWidget {
                           "537XYZ",
                           "537XYZ"
                         ],
-                        "Fridge": ["asd", "qwe", "zxc", "dfgfd"],
-                        "TVs": [for (var i = 0; i == 15; i++) "537XYZ"],
+                        "Fridge": [
+                          "asd",
+                          "qwe",
+                          "zxc",
+                          "dfgfd",
+                        ],
+                        "TVs": [
+                          for (var i = 0; i == 15; i++) "537XYZ",
+                        ],
                         "Iron": [for (var i = 0; i == 15; i++) "537XYZ"],
                         "PC": [for (var i = 0; i == 15; i++) "537XYZ"],
                         "Oven": ["asd", "qwe", "zxc", "dfgfd"],
