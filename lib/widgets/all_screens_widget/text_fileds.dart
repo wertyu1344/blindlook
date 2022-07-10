@@ -33,7 +33,7 @@ class TextFeilds extends StatelessWidget {
             fontSize: 14,
             fontStyle: FontStyle.italic),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(16)),
+          borderRadius: const BorderRadius.all(Radius.circular(16)),
           borderSide: BorderSide(
             width: 1.5,
             color: constants.primaryColor,
@@ -41,14 +41,14 @@ class TextFeilds extends StatelessWidget {
           ),
         ),
         disabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(16)),
+          borderRadius: const BorderRadius.all(Radius.circular(16)),
           borderSide: BorderSide(
             width: 1.5,
             color: constants.primaryColor,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(16)),
+          borderRadius: const BorderRadius.all(Radius.circular(16)),
           borderSide: BorderSide(
             width: 1.5,
             style: BorderStyle.solid,
@@ -56,7 +56,7 @@ class TextFeilds extends StatelessWidget {
           ),
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(16)),
+          borderRadius: const BorderRadius.all(Radius.circular(16)),
           borderSide: BorderSide(
             width: 1.5,
             style: BorderStyle.solid,

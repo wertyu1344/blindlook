@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../constants/constants.dart';
 import '../../controller/controller.dart';
-import '../../widgets/eye_menu/eye_menu_app_bar.dart';
 
 class EyeMenuGooglePlay extends StatelessWidget {
   EyeMenuGooglePlay({Key? key}) : super(key: key);
-  Constants constants = Get.find();
-  LoginClass controller = Get.find();
+  final Constants constants = Get.find();
+  final LoginClass controller = Get.find();
 
   @override
   Widget build(BuildContext context) {

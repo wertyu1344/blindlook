@@ -16,7 +16,7 @@ class MethodType extends StatelessWidget {
       required this.deger,
       required this.selected})
       : super(key: key);
-  Constants constants = Get.find<Constants>();
+  final Constants constants = Get.find<Constants>();
 
   @override
   Widget build(BuildContext context) {

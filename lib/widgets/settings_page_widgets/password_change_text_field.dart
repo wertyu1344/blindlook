@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class PasswordTextField extends StatefulWidget {
   final TextEditingController controller;
-  PasswordTextField(this.controller, {Key? key}) : super(key: key);
+  const PasswordTextField(this.controller, {Key? key}) : super(key: key);
 
   @override
   State<PasswordTextField> createState() => _PasswordTextFieldState();
@@ -48,14 +48,14 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
             ),
           ),
           disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(16)),
+            borderRadius: const BorderRadius.all(Radius.circular(16)),
             borderSide: BorderSide(
               width: 1.5,
               color: constants.primaryColor,
             ),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(16)),
+            borderRadius: const BorderRadius.all(Radius.circular(16)),
             borderSide: BorderSide(
               width: 1.5,
               style: BorderStyle.solid,
@@ -63,7 +63,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
             ),
           ),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(16)),
+            borderRadius: const BorderRadius.all(Radius.circular(16)),
             borderSide: BorderSide(
               width: 1.5,
               style: BorderStyle.solid,

@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 
 class ErisebilirlikHaritasi extends StatelessWidget {
   ErisebilirlikHaritasi({Key? key}) : super(key: key);
-  LoginClass controller = Get.find();
-  Constants constants = Get.find();
+  final LoginClass controller = Get.find();
+  final Constants constants = Get.find();
 
   @override
   Widget build(BuildContext context) {

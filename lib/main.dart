@@ -1,6 +1,5 @@
 import 'package:blindlook/constants/constants.dart';
 import 'package:blindlook/screens/eye_menu_screen/eye_menu.dart';
-import 'package:blindlook/screens/eye_menu_screen/eye_menu_screen.dart';
 import 'package:blindlook/screens/home_screen/eye_brands_screen/eye_brands_screen.dart';
 import 'package:blindlook/screens/home_screen/home_screen.dart';
 import 'package:blindlook/screens/log_reg_screen/sign_up_screen.dart';
@@ -28,29 +27,31 @@ class MyApp extends StatelessWidget {
 
   Controller controller = Get.put(Controller());
   LoginClass controllerLogin = Get.put(LoginClass());
+
+  MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     List<Widget> pages = [
       EyeMenu(),
       SettingsScreen(),
-      RequestScreen(),
+      const RequestScreen(),
       NewsScreen(),
       SignUpScreen(),
       EyeBrands(),
     ];
     List<Widget> pagesSingIn = [
       HomePage(),
-      RequestScreen(),
+      const RequestScreen(),
       SimulationScreen(),
       SettingsScreen(),
     ];
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return GetMaterialApp(
       theme: ThemeData(fontFamily: 'Cera'),
       home: SafeArea(
         child: Obx(
           () => Scaffold(
-              key: _scaffoldKey,
+              key: scaffoldKey,
               extendBody: true,
               bottomNavigationBar: BotNavBar(),
               body: controllerLogin.isLogin == false

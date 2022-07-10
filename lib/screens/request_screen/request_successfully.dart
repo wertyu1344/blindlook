@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class RequestSuccesfully extends StatelessWidget {
   final Function backToHome;
   RequestSuccesfully({Key? key, required this.backToHome}) : super(key: key);
-  Constants constants = Get.find<Constants>();
+  final Constants constants = Get.find<Constants>();
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class RequestSuccesfully extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           Text(
@@ -31,7 +31,7 @@ class RequestSuccesfully extends StatelessWidget {
                   "assets/images/request_page_images/verify.png",
                   width: 50,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Text(

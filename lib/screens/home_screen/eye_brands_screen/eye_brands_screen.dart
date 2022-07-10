@@ -56,7 +56,7 @@ class _EyeBrandsState extends State<EyeBrands> {
               tag: "ccc",
               child: Obx(
                 () => Visibility(
-                  replacement: SizedBox(
+                  replacement: const SizedBox(
                     height: 60,
                   ),
                   visible: widget.controller.eyeBrandsVisible.value,

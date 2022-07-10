@@ -14,7 +14,7 @@ import 'eye_menu_screen.dart';
 
 class EyeMenu extends StatelessWidget {
   EyeMenu({Key? key}) : super(key: key);
-  LoginClass controller = Get.find();
+  final LoginClass controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class EyeMenu extends StatelessWidget {
   body() {
     switch (controller.eyeMenuPageIndex.value) {
       case 0:
-        return EyeMenuPage();
+        return const EyeMenuPage();
       case 1:
         return EyeMenu1();
       case 2:

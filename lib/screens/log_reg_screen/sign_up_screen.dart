@@ -35,7 +35,7 @@ class SignUpScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(flex: 10, child: SizedBox()),
+            const Expanded(flex: 10, child: SizedBox()),
             Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -45,7 +45,7 @@ class SignUpScreen extends StatelessWidget {
                     height: 48,
                   ),
                 ),
-                SizedBox(height: 12),
+                const SizedBox(height: 12),
                 const Text(
                   "Your request successfully sent.\nWe’ll get back to you soon.",
                   textAlign: TextAlign.center,
@@ -56,7 +56,7 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.only(top: 300.0),
               child: Container(
@@ -90,7 +90,7 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
           ],
         ),
       ),
@@ -122,7 +122,7 @@ class SignUpScreen extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(height: 53.15),
+            const SizedBox(height: 53.15),
             Container(
               width: 340,
               height: 350,
@@ -145,8 +145,8 @@ class SignUpScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 12),
-                  Text(
+                  const SizedBox(height: 12),
+                  const Text(
                     "Upload your document",
                     style: TextStyle(
                         fontWeight: FontWeight.w500,
@@ -300,7 +300,7 @@ class SignUpScreen extends StatelessWidget {
             const SizedBox(height: 157.5),
             TextFormField(
               controller: textFormControllerName,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   hintText: "Almedia Silva",
                   hintStyle: TextStyle(
                       color: Color.fromRGBO(48, 0, 68, 1),
@@ -493,7 +493,7 @@ class SignUpScreen extends StatelessWidget {
                     flex: 1,
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton(
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Color.fromRGBO(164, 164, 164, 1)),
                           value: controllerLogin.phoneCode.value,
                           items: CountrConst.countryList.map((String items) {
@@ -510,14 +510,15 @@ class SignUpScreen extends StatelessWidget {
                   Expanded(
                     flex: 2,
                     child: TextFormField(
-                      decoration: InputDecoration(border: InputBorder.none),
+                      decoration:
+                          const InputDecoration(border: InputBorder.none),
                       keyboardType: TextInputType.phone,
                       autofocus: true,
                     ),
                   ),
                 ],
               ),
-              Divider(),
+              const Divider(),
               const SizedBox(height: 100),
               Container(
                 width: 290,

@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class RequestWidgets extends StatelessWidget {
   final Function onTab;
-  Constants constants = Get.find<Constants>();
+  final Constants constants = Get.find<Constants>();
 
   final EdgeInsets padding;
   final String imagePath;

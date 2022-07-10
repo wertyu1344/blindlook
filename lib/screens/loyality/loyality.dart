@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class LoyalityScreen extends StatelessWidget {
   LoyalityScreen({Key? key}) : super(key: key);
-  var controller = Get.put(Controller());
+  final Controller controller = Get.find();
   @override
   Widget build(BuildContext context) {
     var list = [
@@ -54,7 +54,7 @@ class LoyalityScreen extends StatelessWidget {
                     color: Color.fromRGBO(164, 164, 164, 1), fontSize: 17),
               ),
               const SizedBox(height: 29),
-              SizedBox(height: 51),
+              const SizedBox(height: 51),
               InkWell(
                 onTap: () => controller.loyalityPageIndex.value = 1,
                 child: Image.asset(
@@ -144,13 +144,13 @@ class LoyalityScreen extends StatelessWidget {
         ),
         const SizedBox(height: 63),
         Column(
-          children: [
+          children: const [
             Text(
               "Here is what you need to do;",
               style:
                   TextStyle(fontSize: 15, color: Color.fromRGBO(48, 0, 68, 1)),
             ),
-            const Text(
+            Text(
               """
               
             1. Comment on XYZ brand
@@ -163,7 +163,7 @@ class LoyalityScreen extends StatelessWidget {
             ),
           ],
         ),
-        Spacer(),
+        const Spacer(),
         Center(
           child: Padding(
             padding: const EdgeInsets.only(bottom: 150.0),
@@ -241,7 +241,7 @@ class LoyalityScreen extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.circle_outlined,
-                    color: Color.fromRGBO(48, 0, 68, 1).withOpacity(0.5),
+                    color: const Color.fromRGBO(48, 0, 68, 1).withOpacity(0.5),
                   ),
                   isCompleted
                       ? Padding(
@@ -249,16 +249,16 @@ class LoyalityScreen extends StatelessWidget {
                           child: Icon(
                             Icons.check,
                             size: 12,
-                            color:
-                                Color.fromRGBO(48, 0, 68, 1).withOpacity(0.5),
+                            color: const Color.fromRGBO(48, 0, 68, 1)
+                                .withOpacity(0.5),
                           ),
                         )
-                      : SizedBox(),
+                      : const SizedBox(),
                 ],
               ),
             ),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -268,18 +268,18 @@ class LoyalityScreen extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 17,
                       color: isCompleted
-                          ? Color.fromRGBO(48, 0, 68, 1).withOpacity(0.5)
-                          : Color.fromRGBO(48, 0, 68, 1)),
+                          ? const Color.fromRGBO(48, 0, 68, 1).withOpacity(0.5)
+                          : const Color.fromRGBO(48, 0, 68, 1)),
                 ),
-                SizedBox(height: 6),
+                const SizedBox(height: 6),
                 isCompleted
                     ? Text(
                         "Completed",
                         textAlign: TextAlign.start,
                         style: TextStyle(
                             fontSize: 13,
-                            color:
-                                Color.fromRGBO(48, 0, 68, 1).withOpacity(0.5)),
+                            color: const Color.fromRGBO(48, 0, 68, 1)
+                                .withOpacity(0.5)),
                       )
                     : const SizedBox()
               ],
@@ -346,8 +346,8 @@ class LoyalityScreen extends StatelessWidget {
             ),
             Text(
               priceName,
-              style:
-                  TextStyle(color: Color.fromRGBO(48, 0, 68, 1), fontSize: 22),
+              style: const TextStyle(
+                  color: Color.fromRGBO(48, 0, 68, 1), fontSize: 22),
             ),
             Image.asset(
               "assets/images/home_page_images/send.png",
@@ -397,7 +397,7 @@ class LoyalityScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -409,13 +409,14 @@ class LoyalityScreen extends StatelessWidget {
                       color: Color.fromRGBO(48, 0, 68, 1),
                       fontWeight: FontWeight.w500),
                 ),
-                SizedBox(height: 6),
+                const SizedBox(height: 6),
                 Text(
                   date,
                   textAlign: TextAlign.start,
                   style: TextStyle(
                       fontSize: 13,
-                      color: Color.fromRGBO(48, 0, 68, 1).withOpacity(0.5)),
+                      color:
+                          const Color.fromRGBO(48, 0, 68, 1).withOpacity(0.5)),
                 )
               ],
             ),
@@ -449,7 +450,7 @@ class LoyalityScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: 12),
+            const SizedBox(width: 12),
             Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -461,13 +462,14 @@ class LoyalityScreen extends StatelessWidget {
                         color: Color.fromRGBO(48, 0, 68, 1),
                         fontWeight: FontWeight.w500),
                   ),
-                  SizedBox(height: 6),
+                  const SizedBox(height: 6),
                   Text(
                     date,
                     textAlign: TextAlign.start,
                     style: TextStyle(
                         fontSize: 13,
-                        color: Color.fromRGBO(48, 0, 68, 1).withOpacity(0.5)),
+                        color: const Color.fromRGBO(48, 0, 68, 1)
+                            .withOpacity(0.5)),
                   )
                 ],
               ),

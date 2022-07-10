@@ -187,7 +187,7 @@ class TabWidget extends StatelessWidget {
       required this.ontap,
       required this.title,
       required this.selected});
-  Constants constants = Get.find();
+  final Constants constants = Get.find();
 
   @override
   Widget build(BuildContext context) {

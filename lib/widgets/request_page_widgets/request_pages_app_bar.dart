@@ -9,7 +9,7 @@ class RequestAppBar extends StatelessWidget {
   }) : super(key: key);
 
   final Size size;
-  Constants constants = Get.find<Constants>();
+  final Constants constants = Get.find<Constants>();
 
   @override
   Widget build(BuildContext context) {

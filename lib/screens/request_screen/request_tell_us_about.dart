@@ -7,7 +7,7 @@ class RequestTellUsAbout extends StatelessWidget {
   final Function goNext;
   RequestTellUsAbout({Key? key, required this.goBack, required this.goNext})
       : super(key: key);
-  Constants constants = Get.find<Constants>();
+  final Constants constants = Get.find<Constants>();
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class RequestTellUsAbout extends StatelessWidget {
             "Tell us about your experiences;",
             style: constants.requestTextStyleMedium,
           ),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           TextFormField(
@@ -64,7 +64,7 @@ class RequestTellUsAbout extends StatelessWidget {
                   fontSize: 20,
                   fontStyle: FontStyle.italic),
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
                 borderSide: BorderSide(
                   width: 1.5,
                   color: constants.primaryColor,
@@ -72,14 +72,14 @@ class RequestTellUsAbout extends StatelessWidget {
                 ),
               ),
               disabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
                 borderSide: BorderSide(
                   width: 1.5,
                   color: constants.primaryColor,
                 ),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
                 borderSide: BorderSide(
                   width: 1.5,
                   style: BorderStyle.solid,
@@ -87,7 +87,7 @@ class RequestTellUsAbout extends StatelessWidget {
                 ),
               ),
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
                 borderSide: BorderSide(
                   width: 1.5,
                   style: BorderStyle.solid,

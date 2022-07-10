@@ -76,7 +76,7 @@ class _RequestSelectMethodState extends State<RequestSelectMethod> {
                     fontSize: 20,
                     fontStyle: FontStyle.italic),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
+                  borderRadius: const BorderRadius.all(Radius.circular(16)),
                   borderSide: BorderSide(
                     width: 1.5,
                     color: constants.primaryColor,
@@ -84,14 +84,14 @@ class _RequestSelectMethodState extends State<RequestSelectMethod> {
                   ),
                 ),
                 disabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
+                  borderRadius: const BorderRadius.all(Radius.circular(16)),
                   borderSide: BorderSide(
                     width: 1.5,
                     color: constants.primaryColor,
                   ),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
+                  borderRadius: const BorderRadius.all(Radius.circular(16)),
                   borderSide: BorderSide(
                     width: 1.5,
                     style: BorderStyle.solid,
@@ -99,7 +99,7 @@ class _RequestSelectMethodState extends State<RequestSelectMethod> {
                   ),
                 ),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
+                  borderRadius: const BorderRadius.all(Radius.circular(16)),
                   borderSide: BorderSide(
                     width: 1.5,
                     style: BorderStyle.solid,
@@ -129,7 +129,7 @@ class _RequestSelectMethodState extends State<RequestSelectMethod> {
                       selected = 1;
                       setState(() {});
                     },
-                    padding: EdgeInsets.only(right: 7)),
+                    padding: const EdgeInsets.only(right: 7)),
                 MethodType(
                     selected: selected,
                     deger: 2,
@@ -139,7 +139,7 @@ class _RequestSelectMethodState extends State<RequestSelectMethod> {
 
                       setState(() {});
                     },
-                    padding: EdgeInsets.only(right: 7)),
+                    padding: const EdgeInsets.only(right: 7)),
                 MethodType(
                     selected: selected,
                     deger: 3,
@@ -168,7 +168,7 @@ class _RequestSelectMethodState extends State<RequestSelectMethod> {
                     "assets/images/request_page_images/next_button_${selected != 0 ? "" : "NON_"}selectable.png"),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             )
           ],

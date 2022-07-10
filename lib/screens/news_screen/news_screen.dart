@@ -11,10 +11,10 @@ class NewsScreen extends StatelessWidget {
   Controller controller = Get.put(Controller());
   @override
   Widget build(BuildContext context) {
-    var List = [mainPage(context), blogDetail()];
+    var list = [mainPage(context), blogDetail()];
 
     return Obx(
-      () => Scaffold(body: List.elementAt(controller.blogIndex.value)),
+      () => Scaffold(body: list.elementAt(controller.blogIndex.value)),
     );
   }
 
@@ -23,10 +23,10 @@ class NewsScreen extends StatelessWidget {
       () => ListView(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               children: [
-                SizedBox(height: 63),
+                const SizedBox(height: 63),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -39,7 +39,7 @@ class NewsScreen extends StatelessWidget {
                     ),
                     Text(
                       controller.blogPostTitle.value,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Color.fromRGBO(48, 0, 68, 1), fontSize: 22),
                     ),
                     Image.asset(
@@ -58,7 +58,7 @@ class NewsScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 53),
-                Text(
+                const Text(
                   """Migros has become a Blind Friendly Brand (EyeBrand) and is now in the Audio freedom world of BlindLook!
 
 We know that every consumer deserves the highest quality experience. As BlindLook, our responsibility is to bring the blind and visually impaired consumer to the quality service they deserve. Because not seeing is just a difference. This difference turns into an insurmountable disability only when circumstances prevent us.
@@ -107,7 +107,7 @@ Thank you Migros for removing the barriers in your products and services and bei
                   ),
                 ],
               ),
-              SizedBox(height: 63),
+              const SizedBox(height: 63),
               buildNewsWidget(
                 () {},
                 "Blog Post Title",
@@ -193,7 +193,7 @@ Thank you Migros for removing the barriers in your products and services and bei
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,
                 colors: [
@@ -212,7 +212,7 @@ Thank you Migros for removing the barriers in your products and services and bei
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
                     text,
-                    style: TextStyle(color: Colors.white, fontSize: 17),
+                    style: const TextStyle(color: Colors.white, fontSize: 17),
                   ),
                 ),
               ],

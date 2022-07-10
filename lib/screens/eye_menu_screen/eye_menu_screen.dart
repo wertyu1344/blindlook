@@ -7,7 +7,7 @@ import '../../widgets/all_screens_widget/text_fileds.dart';
 import '../../widgets/eye_menu/select_category.dart';
 
 class EyeMenuPage extends StatefulWidget {
-  EyeMenuPage({Key? key}) : super(key: key);
+  const EyeMenuPage({Key? key}) : super(key: key);
 
   @override
   State<EyeMenuPage> createState() => _EyeMenuPageState();

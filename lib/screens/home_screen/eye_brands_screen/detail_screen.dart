@@ -16,7 +16,7 @@ class EyeBrandsDetail extends StatelessWidget {
           bottomNavigationBar: BotNavBar(),
           body: ListView(
             children: [
-              SizedBox(height: 60),
+              const SizedBox(height: 60),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -39,14 +39,14 @@ class EyeBrandsDetail extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 152),
+              const SizedBox(height: 152),
               Image.asset(
                 "assets/images/eye_brands/a.png",
                 height: 64,
               ),
-              SizedBox(height: 138),
-              Padding(
-                padding: const EdgeInsets.only(right: 25.0, left: 25),
+              const SizedBox(height: 138),
+              const Padding(
+                padding: EdgeInsets.only(right: 25.0, left: 25),
                 child: Text(
                     """Amazon has become a Blind Friendly Brand (EyeBrand) and is now in the Audio freedom world of BlindLook!
 

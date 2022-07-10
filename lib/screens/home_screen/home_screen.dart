@@ -12,7 +12,7 @@ import '../../constants/constants.dart';
 import '../../widgets/home_page_widgets/app_bar_widget.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -34,8 +34,10 @@ class _HomePageState extends State<HomePage> {
             : controllerLogin.isHomePageActive.value == "Loyality"
                 ? LoyalityScreen()
                 : controllerLogin.isHomePageActive.value == "News"
-                    ? NewsScreen():controllerLogin.isHomePageActive.value == "AboutUs"?AboutUsScreen()
-                    : SizedBox());
+                    ? NewsScreen()
+                    : controllerLogin.isHomePageActive.value == "AboutUs"
+                        ? const AboutUsScreen()
+                        : const SizedBox());
   }
 
   Padding mainHomePage() {
@@ -114,11 +116,10 @@ class _HomePageState extends State<HomePage> {
                           imagePath: "BlindLook",
                           flex: 10,
                           padding: EdgeInsets.only(right: butonlarArasiBosluk),
-                          onTap: (){
+                          onTap: () {
                             controllerLogin.selectedItemColor.value =
-                            const Color.fromRGBO(133, 91, 151, 1);
-                            controllerLogin.isHomePageActive.value =
-                            "AboutUs";
+                                const Color.fromRGBO(133, 91, 151, 1);
+                            controllerLogin.isHomePageActive.value = "AboutUs";
                           },
                           text: controller.homepageCenter2.value,
                         ),

@@ -13,8 +13,9 @@ class Story extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            decoration: BoxDecoration(
-              image: DecorationImage(
+            decoration: const BoxDecoration(
+              // ignore: unnecessary_const
+              image: const DecorationImage(
                 fit: BoxFit.fill,
                 image: AssetImage("assets/images/story/story.png"),
               ),
@@ -24,7 +25,7 @@ class Story extends StatelessWidget {
             padding: const EdgeInsets.only(top: 50.0, right: 20),
             child: IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   FontAwesomeIcons.x,
                   color: Colors.white,
                 )),

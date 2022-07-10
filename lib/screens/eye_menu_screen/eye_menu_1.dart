@@ -7,8 +7,8 @@ import '../../widgets/eye_menu/store.dart';
 
 class EyeMenu1 extends StatelessWidget {
   EyeMenu1({Key? key}) : super(key: key);
-  Constants constants = Get.find<Constants>();
-  LoginClass controller = Get.find();
+  final Constants constants = Get.find<Constants>();
+  final LoginClass controller = Get.find();
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;

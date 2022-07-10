@@ -8,8 +8,8 @@ import '../../widgets/eye_menu/eye_menu_app_bar.dart';
 class EyeMenu2 extends StatelessWidget {
   EyeMenu2({Key? key}) : super(key: key);
 
-  Constants constants = Get.find();
-  LoginClass controller = Get.find();
+  final Constants constants = Get.find();
+  final LoginClass controller = Get.find();
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -17,19 +17,19 @@ class EyeMenu2 extends StatelessWidget {
     return Container(
       padding: constants.pagePadding,
       child: ListView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
           const SizedBox(
             height: 15,
           ),
           EyeMenuAppBar(
               controller: controller, size: size, constants: constants),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Text(
             controller.selectedStore.baslik,
             style: constants.requestTextStyleTitle.copyWith(fontSize: 20),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             controller.selectedStore.altBaslik,
             style: TextStyle(
@@ -37,14 +37,14 @@ class EyeMenu2 extends StatelessWidget {
               fontSize: 16,
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Text(
             controller.selectedStore.sponsor,
             textAlign: TextAlign.center,
             style: constants.requestTextStyleTitle
                 .copyWith(fontWeight: FontWeight.w200, fontSize: 18),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             children: [
               Expanded(
@@ -97,7 +97,7 @@ class EyeMenuWidget extends StatelessWidget {
       required this.imagePath,
       required this.height})
       : super(key: key);
-  LoginClass controller = Get.find();
+  final LoginClass controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +128,7 @@ class EyeMenuWidget extends StatelessWidget {
                 width: 30,
                 height: 30,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(

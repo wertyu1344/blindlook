@@ -7,9 +7,9 @@ import '../../widgets/request_page_widgets/request_tags.dart';
 class RequestScreenTagYour extends StatelessWidget {
   final Function goBack;
   final Function goNext;
+  final Constants constants = Get.find<Constants>();
   RequestScreenTagYour({Key? key, required this.goBack, required this.goNext})
       : super(key: key);
-  Constants constants = Get.find<Constants>();
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class RequestScreenTagYour extends StatelessWidget {
             "Tag your request to help us reach\nthe right audience",
             style: constants.requestTextStyleMedium,
           ),
-          SizedBox(
+          const SizedBox(
             height: 60,
           ),
           TextFormField(
@@ -64,7 +64,7 @@ class RequestScreenTagYour extends StatelessWidget {
                   fontSize: 14,
                   fontStyle: FontStyle.italic),
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
                 borderSide: BorderSide(
                   width: 1.5,
                   color: constants.primaryColor,
@@ -72,14 +72,14 @@ class RequestScreenTagYour extends StatelessWidget {
                 ),
               ),
               disabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
                 borderSide: BorderSide(
                   width: 1.5,
                   color: constants.primaryColor,
                 ),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
                 borderSide: BorderSide(
                   width: 1.5,
                   style: BorderStyle.solid,
@@ -87,7 +87,7 @@ class RequestScreenTagYour extends StatelessWidget {
                 ),
               ),
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
                 borderSide: BorderSide(
                   width: 1.5,
                   style: BorderStyle.solid,

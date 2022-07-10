@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class RequestTags extends StatelessWidget {
   RequestTags({Key? key}) : super(key: key);
-  Constants constants = Get.find<Constants>();
+  final Constants constants = Get.find<Constants>();
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class RequestTags extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: Color.fromARGB(246, 241, 241, 241),
+          color: const Color.fromARGB(246, 241, 241, 241),
         ),
         child: Text(
           "Lorem Ipsum",

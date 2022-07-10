@@ -7,7 +7,7 @@ class EyeMenuEdit extends StatelessWidget {
   EyeMenuEdit({Key? key}) : super(key: key);
   final Constants constants = Get.find();
   final LoginClass controller = Get.find();
-  TextEditingController textEditingController = TextEditingController();
+  final TextEditingController textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +83,7 @@ class EyeMenuEdit extends StatelessWidget {
                   fontSize: 20,
                   fontStyle: FontStyle.italic),
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
                 borderSide: BorderSide(
                   width: 1.5,
                   color: constants.primaryColor,
@@ -91,14 +91,14 @@ class EyeMenuEdit extends StatelessWidget {
                 ),
               ),
               disabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
                 borderSide: BorderSide(
                   width: 1.5,
                   color: constants.primaryColor,
                 ),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
                 borderSide: BorderSide(
                   width: 1.5,
                   style: BorderStyle.solid,
@@ -106,7 +106,7 @@ class EyeMenuEdit extends StatelessWidget {
                 ),
               ),
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
                 borderSide: BorderSide(
                   width: 1.5,
                   style: BorderStyle.solid,
@@ -115,7 +115,7 @@ class EyeMenuEdit extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           InkWell(
               onTap: () {},
               child: Image.asset("assets/images/eye_menu/Gönder.png"))

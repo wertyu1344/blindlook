@@ -13,7 +13,7 @@ class NotificationWidget extends StatelessWidget {
 We know that every consumer deserves the highest quality experience. As BlindLook, our responsibility is to bring the blind and visually impaired consumer to the quality service they deserve. Because not seeing is just a difference. This difference turns into an insurmountable disability only when circumstances prevent us.
 
 Thank you Migros for removing the barriers in your products and services and being a partner in our dream of an equal and barrier-free world! Together we are much stronger!""";
-  var controller = Get.put(Controller());
+  final controller = Get.put(Controller());
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -55,7 +55,7 @@ Thank you Migros for removing the barriers in your products and services and bei
                       Visibility(
                           visible:
                               controller.isClickedNotification.value == false,
-                          child: SizedBox(
+                          child: const SizedBox(
                             width: 30,
                             height: 30,
                           )),
@@ -143,10 +143,10 @@ Thank you Migros for removing the barriers in your products and services and bei
               width: 70,
               height: 70,
               decoration: BoxDecoration(
-                  color: Color.fromRGBO(255, 255, 255, 0.5),
+                  color: const Color.fromRGBO(255, 255, 255, 0.5),
                   borderRadius: BorderRadius.circular(12)),
             ),
-            SizedBox(
+            const SizedBox(
               width: 12,
             ),
             Column(
@@ -154,9 +154,9 @@ Thank you Migros for removing the barriers in your products and services and bei
               children: [
                 Text(
                   text,
-                  style: TextStyle(fontSize: 17, color: Colors.white),
+                  style: const TextStyle(fontSize: 17, color: Colors.white),
                 ),
-                SizedBox(height: 6),
+                const SizedBox(height: 6),
                 Text(
                   "JUN 10, 2022",
                   style: TextStyle(
@@ -179,7 +179,7 @@ Thank you Migros for removing the barriers in your products and services and bei
           style: const TextStyle(
               fontWeight: FontWeight.w500, fontSize: 17, color: Colors.white),
         ),
-        SizedBox(height: 29),
+        const SizedBox(height: 29),
         Text(
           detail,
           style: const TextStyle(fontSize: 14, color: Colors.white),

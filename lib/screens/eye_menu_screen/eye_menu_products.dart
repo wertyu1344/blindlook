@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../constants/constants.dart';
 import '../../controller/controller.dart';
-import '../../widgets/eye_menu/eye_menu_app_bar.dart';
 
 class EyeMenuProducts extends StatelessWidget {
   EyeMenuProducts({Key? key}) : super(key: key);
-  Constants constants = Get.find();
-  LoginClass controller = Get.find();
+  final Constants constants = Get.find();
+  final LoginClass controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class EyeMenuProducts extends StatelessWidget {
     return Container(
       padding: constants.pagePadding,
       child: ListView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
           const SizedBox(
             height: 15,
@@ -121,7 +120,7 @@ class ExpansionListTiles extends StatelessWidget {
     if (product != null) {
       for (var i = 0; i < product!.length; i++) {
         a.add(Padding(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [Text(product![i]), Text("${price![i]}TL")]),

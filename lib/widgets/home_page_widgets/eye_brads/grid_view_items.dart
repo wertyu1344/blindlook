@@ -13,7 +13,7 @@ class GridViewItems extends StatelessWidget {
     return InkWell(
       onTap: () => Get.to(EyeBrandsDetail()),
       child: Padding(
-          padding: EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10.0),
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15), color: Colors.white60),
