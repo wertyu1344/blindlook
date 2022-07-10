@@ -29,7 +29,7 @@ class EyeMenu1 extends StatelessWidget {
               ),
               Text(
                 "EyeMenu",
-                style: constants.requestTextStyleTitle,
+                style: constants.requestTextStyleTitle.copyWith(fontSize: 22),
               ),
               const SizedBox(
                 width: 24,

@@ -36,7 +36,7 @@ class EyeMenuProducts extends StatelessWidget {
               ),
               Text(
                 "EyeMenu",
-                style: constants.requestTextStyleTitle,
+                style: constants.requestTextStyleTitle.copyWith(fontSize: 22),
               ),
               Image.asset(
                 "assets/images/eye_menu/edit.png",
