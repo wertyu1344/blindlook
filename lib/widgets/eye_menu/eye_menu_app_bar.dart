@@ -22,7 +22,7 @@ class EyeMenuAppBar extends StatelessWidget {
       children: [
         IconButton(
           onPressed: () {
-            controller.eyeMenuPageIndex.value = 2;
+            controller.eyeMenuPageIndex.value--;
           },
           icon: Image.asset(
             "assets/images/request_page_images/back.png",

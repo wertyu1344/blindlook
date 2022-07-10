@@ -21,8 +21,30 @@ class EyeMenuGooglePlay extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          EyeMenuAppBar(
-              controller: controller, size: size, constants: constants),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                onPressed: () {
+                  controller.eyeMenuPageIndex.value = 2;
+                },
+                icon: Image.asset(
+                  "assets/images/request_page_images/back.png",
+                  height: size.height / 22,
+                  width: size.width / 8,
+                ),
+              ),
+              Text(
+                "EyeMenu",
+                style: constants.requestTextStyleTitle,
+              ),
+              Image.asset(
+                "assets/images/eye_menu/edit.png",
+                height: size.height / 22,
+                width: size.width / 8,
+              )
+            ],
+          ),
           const SizedBox(height: 30),
           Text(
             controller.selectedStore.baslik,

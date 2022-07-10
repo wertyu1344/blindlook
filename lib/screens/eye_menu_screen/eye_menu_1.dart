@@ -1,3 +1,4 @@
+import 'package:blindlook/controller/controller.dart';
 import 'package:blindlook/models/store_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -7,7 +8,7 @@ import '../../widgets/eye_menu/store.dart';
 class EyeMenu1 extends StatelessWidget {
   EyeMenu1({Key? key}) : super(key: key);
   Constants constants = Get.find<Constants>();
-
+  LoginClass controller = Get.find();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,16 +19,19 @@ class EyeMenu1 extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const SizedBox(
-                width: 24,
-                height: 24,
+              InkWell(
+                onTap: () => controller.eyeMenuPageIndex--,
+                child: Image.asset(
+                  "assets/images/request_page_images/back.png",
+                  width: 24,
+                  height: 24,
+                ),
               ),
               Text(
-                "Simulation",
+                "EyeMenu",
                 style: constants.requestTextStyleTitle,
               ),
-              Image.asset(
-                "assets/images/simulation_page_images/search.png",
+              const SizedBox(
                 width: 24,
                 height: 24,
               )
