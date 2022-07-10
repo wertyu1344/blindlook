@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 
 import 'eye_menu_1.dart';
 
+import 'eye_menu_edit.dart';
 import 'eye_menu_products.dart';
 import 'eye_menu_screen.dart';
 
@@ -40,6 +41,8 @@ class EyeMenu extends StatelessWidget {
         return EyeMenuProducts();
       case 6:
         return EyeMenuGooglePlay();
+      case 7:
+        return EyeMenuEdit();
     }
   }
 }

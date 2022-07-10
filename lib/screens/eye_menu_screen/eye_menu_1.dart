@@ -11,6 +11,7 @@ class EyeMenu1 extends StatelessWidget {
   LoginClass controller = Get.find();
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Container(
       padding: constants.pagePadding,
       child: Column(
@@ -23,17 +24,17 @@ class EyeMenu1 extends StatelessWidget {
                 onTap: () => controller.eyeMenuPageIndex--,
                 child: Image.asset(
                   "assets/images/request_page_images/back.png",
-                  width: 24,
-                  height: 24,
+                  height: size.height / 22,
+                  width: size.width / 8,
                 ),
               ),
               Text(
                 "EyeMenu",
                 style: constants.requestTextStyleTitle.copyWith(fontSize: 22),
               ),
-              const SizedBox(
-                width: 24,
-                height: 24,
+              SizedBox(
+                width: size.width / 8,
+                height: size.height / 22,
               )
             ],
           ),

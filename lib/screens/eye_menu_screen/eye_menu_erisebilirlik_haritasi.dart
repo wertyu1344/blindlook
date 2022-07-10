@@ -3,8 +3,6 @@ import 'package:blindlook/controller/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../widgets/eye_menu/eye_menu_app_bar.dart';
-
 class ErisebilirlikHaritasi extends StatelessWidget {
   ErisebilirlikHaritasi({Key? key}) : super(key: key);
   LoginClass controller = Get.find();
@@ -34,10 +32,13 @@ class ErisebilirlikHaritasi extends StatelessWidget {
                 "EyeMenu",
                 style: constants.requestTextStyleTitle.copyWith(fontSize: 22),
               ),
-              Image.asset(
-                "assets/images/eye_menu/edit.png",
-                height: size.height / 22,
-                width: size.width / 8,
+              IconButton(
+                onPressed: () => controller.eyeMenuPageIndex.value = 7,
+                icon: Image.asset(
+                  "assets/images/eye_menu/edit.png",
+                  height: size.height / 22,
+                  width: size.width / 8,
+                ),
               )
             ],
           ),

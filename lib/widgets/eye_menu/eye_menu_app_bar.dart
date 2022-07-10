@@ -35,7 +35,7 @@ class EyeMenuAppBar extends StatelessWidget {
           style: constants.requestTextStyleTitle.copyWith(fontSize: 22),
         ),
         Image.asset(
-          "assets/images/eye_menu/edit.png",
+          "assets/images/home_page_images/send.png",
           height: size.height / 22,
           width: size.width / 8,
         )

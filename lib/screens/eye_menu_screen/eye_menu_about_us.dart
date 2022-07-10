@@ -37,10 +37,13 @@ class EyeMenuAboutUs extends StatelessWidget {
                 "EyeMenu",
                 style: constants.requestTextStyleTitle.copyWith(fontSize: 22),
               ),
-              Image.asset(
-                "assets/images/eye_menu/edit.png",
-                height: size.height / 22,
-                width: size.width / 8,
+              IconButton(
+                onPressed: () => controller.eyeMenuPageIndex.value = 7,
+                icon: Image.asset(
+                  "assets/images/eye_menu/edit.png",
+                  height: size.height / 22,
+                  width: size.width / 8,
+                ),
               )
             ],
           ),
