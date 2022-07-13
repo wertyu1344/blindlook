@@ -1,33 +1,22 @@
+import 'package:blindlook/constants/constants.dart';
+import 'package:blindlook/controller/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../constants/constants.dart';
-import '../../models/simulaton_model.dart';
-import '../../screens/simulation_screen/simulation_voice_screen.dart';
 
 class SimulationsWidget extends StatelessWidget {
-  final SimulationsModel simulationsModel;
-
-  final String productName;
-  final String version;
-  const SimulationsWidget({
+  final Function goNext;
+  SimulationsWidget({
     Key? key,
-    required this.constants,
-    required this.productName,
-    required this.version,
-    required this.simulationsModel,
+    required this.goNext,
   }) : super(key: key);
-
-  final Constants constants;
+  final LoginClass controller = Get.find();
+  final Constants constants = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
-        Get.to(() => SimulationVoicePage(
-              simulationsModel: simulationsModel,
-              productName: productName,
-              version: version,
-            ));
+        goNext();
       },
       title: Text(
         "Simulation One",

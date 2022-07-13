@@ -2,6 +2,8 @@ import 'package:blindlook/models/store_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../models/simulaton_model.dart';
+
 class Controller extends GetxController {
   LoginClass controller = Get.put(LoginClass());
   var loyalityPageIndex = 0.obs;
@@ -24,6 +26,17 @@ class Controller extends GetxController {
 }
 
 class LoginClass extends GetxController {
+  var products = ["Washing Machine", "Fridge", "TVs"];
+  var selectedProduct = "";
+  var selectedVersion = "";
+  var versions = [
+    "537XYZ",
+    "537XYZ",
+    "537XYZ",
+    "537XYZ",
+    "537XYZ",
+    "537XYZ",
+  ];
   var isHomePageActive = "Home".obs;
   var selectedItemColor = Colors.white.obs;
   bool isLogin = true;

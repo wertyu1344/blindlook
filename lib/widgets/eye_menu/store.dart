@@ -18,7 +18,6 @@ class Store extends StatelessWidget {
     return InkWell(
       onTap: () {
         controller.eyeMenuPageIndex.value++;
-        controller.selectedStore = storeModel;
       },
       child: ListTile(
         trailing: Image.asset("assets/images/eye_menu/shop.png",

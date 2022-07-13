@@ -1,22 +1,21 @@
 import 'package:blindlook/constants/constants.dart';
-import 'package:blindlook/models/simulaton_model.dart';
+import 'package:blindlook/controller/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../widgets/simulation_page_widgets/simulations_widget.dart';
 
 class VoicesPage extends StatelessWidget {
-  VoicesPage(
-      {Key? key,
-      required this.simulationsModel,
-      required this.productName,
-      required this.version})
-      : super(key: key);
+  final Function goNext;
+  final Function goBack;
+
+  VoicesPage({
+    Key? key,
+    required this.goNext,
+    required this.goBack,
+  }) : super(key: key);
 
   final Constants constants = Get.find<Constants>();
-  final SimulationsModel simulationsModel;
-  final String productName;
-  final String version;
+  final LoginClass controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +36,7 @@ class VoicesPage extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                      Get.back();
+                      goBack();
                     },
                     icon: Image.asset(
                       "assets/images/request_page_images/back.png",
@@ -46,7 +45,7 @@ class VoicesPage extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    simulationsModel.title,
+                    "",
                     style: constants.requestTextStyleTitle,
                   ),
                   Image.asset(
@@ -58,7 +57,7 @@ class VoicesPage extends StatelessWidget {
               ),
               const SizedBox(height: 40),
               Text(
-                "$productName/$version",
+                "${controller.selectedProduct}/${controller.selectedVersion}",
                 textAlign: TextAlign.start,
                 style: const TextStyle(
                     fontFamily: "Cera",
@@ -74,10 +73,9 @@ class VoicesPage extends StatelessWidget {
                     physics: const BouncingScrollPhysics(),
                     itemCount: 15,
                     itemBuilder: (context, index) => SimulationsWidget(
-                      constants: constants,
-                      productName: productName,
-                      version: version,
-                      simulationsModel: simulationsModel,
+                      goNext: () {
+                        goNext();
+                      },
                     ),
                   ),
                 ),

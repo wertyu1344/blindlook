@@ -6,12 +6,12 @@ import 'package:blindlook/screens/log_reg_screen/sign_up_screen.dart';
 import 'package:blindlook/screens/news_screen/news_screen.dart';
 import 'package:blindlook/screens/request_screen/request_screen.dart';
 import 'package:blindlook/screens/settings_screen/settings_screen.dart';
-import 'package:blindlook/screens/simulation_screen/simulation_screen.dart';
+import 'package:blindlook/screens/simulation_screen/simulation.dart';
+import 'package:blindlook/screens/simulation_screen/simulation_screen_main.dart';
 import 'package:blindlook/widgets/bot_nav_bar/bot_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
 import 'controller/controller.dart';
 
 void main() {
@@ -41,8 +41,8 @@ class MyApp extends StatelessWidget {
     ];
     List<Widget> pagesSingIn = [
       HomePage(),
-      const RequestScreen(),
-      SimulationScreen(),
+      RequestScreen(),
+      SimulationPage(),
       SettingsScreen(),
     ];
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
