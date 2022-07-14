@@ -1,5 +1,6 @@
 import 'package:blindlook/controller/controller.dart';
 import 'package:blindlook/screens/about_us/about_us.dart';
+import 'package:blindlook/screens/eye_menu_screen/eye_menu.dart';
 import 'package:blindlook/screens/home_screen/eye_brands_screen/eye_brands_screen.dart';
 import 'package:blindlook/screens/log_reg_screen/sign_up_screen.dart';
 import 'package:blindlook/screens/loyality/loyality.dart';
@@ -37,7 +38,9 @@ class _HomePageState extends State<HomePage> {
                     ? NewsScreen()
                     : controllerLogin.isHomePageActive.value == "AboutUs"
                         ? const AboutUsScreen()
-                        : const SizedBox());
+                        : controllerLogin.isHomePageActive.value == "EyeMenu"
+                            ? EyeMenu()
+                            : const SizedBox());
   }
 
   Padding mainHomePage() {
@@ -45,7 +48,7 @@ class _HomePageState extends State<HomePage> {
         ? controller.homepageCenter1.value = "EyeBrands"
         : controller.homepageCenter1.value = "Simulations";
     controllerLogin.isLogin == false
-        ? controller.homepageCenter2.value = "AboutUs"
+        ? controller.homepageCenter2.value = "EyeMenu"
         : controller.homepageCenter2.value = "AboutUs";
     controllerLogin.isLogin == false
         ? controller.homepageCenter3.value = "Request"
@@ -108,18 +111,32 @@ class _HomePageState extends State<HomePage> {
                                   const Color.fromRGBO(133, 91, 151, 1);
                               controllerLogin.isHomePageActive.value =
                                   "EyeBrands";
+                            } else {
+                              if (controller.homepageCenter1.value ==
+                                  "Simulations") {
+                                controller.pageIndex.value = 2;
+                              }
                             }
                           },
                           text: controller.homepageCenter1.value,
                         ),
                         CenterWidgets(
-                          imagePath: "BlindLook",
+                          imagePath:
+                              controllerLogin.isLogin ? "BlindLook" : "book",
                           flex: 10,
                           padding: EdgeInsets.only(right: butonlarArasiBosluk),
                           onTap: () {
                             controllerLogin.selectedItemColor.value =
                                 const Color.fromRGBO(133, 91, 151, 1);
-                            controllerLogin.isHomePageActive.value = "AboutUs";
+                            if (controller.homePageCenter5.value == "AboutUs") {
+                              controllerLogin.isHomePageActive.value =
+                                  "AboutUs";
+                            } else {
+                              controllerLogin.isHomePageActive.value =
+                                  "EyeMenu";
+                              controllerLogin.selectedItemColor.value =
+                                  const Color.fromRGBO(133, 91, 151, 1);
+                            }
                           },
                           text: controller.homepageCenter2.value,
                         ),
