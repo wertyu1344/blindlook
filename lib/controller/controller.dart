@@ -38,12 +38,12 @@ class LoginClass extends GetxController {
   var isHomePageActive = "Home".obs;
   var selectCountryIndex = 0.obs;
   var selectedItemColor = Colors.white.obs;
-  bool isLogin = false;
+  var isLogin = false.obs;
   var eyeBrandsVisible = true.obs;
   var eyeBrandsFilterIndex = 0.obs;
-  var isFirtsTime = false.obs;
+  var isFirstTime = false.obs;
   var signupPageIndex = 0.obs;
-  var resquestType = "";
+  var requestType = "";
   var phoneCode = "+93".obs;
   var requestPageIndex = 0.obs;
   var simulationPageIndex = 0.obs;

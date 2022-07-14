@@ -26,7 +26,7 @@ class BotNavBar extends StatelessWidget {
               showUnselectedLabels: true,
               backgroundColor: constants.primaryColor,
               selectedItemColor: controllerLogin.selectedItemColor.value,
-              unselectedItemColor: Color.fromRGBO(133, 91, 151, 1),
+              unselectedItemColor: const Color.fromRGBO(133, 91, 151, 1),
               onTap: (int i) {
                 Get.back();
 
@@ -40,7 +40,7 @@ class BotNavBar extends StatelessWidget {
                     ? controllerLogin.requestPageIndex.value = 0
                     : null;
                 if (controller.pageIndex.value == 3 &&
-                    controllerLogin.isLogin == false) {
+                    controllerLogin.isLogin.value == false) {
                   Get.to(() => SignUpScreen());
                   controller.pageIndex.value = 0;
                 }
@@ -64,7 +64,7 @@ class BotNavBar extends StatelessWidget {
                             : "assets/icons/bot_nav_bar/requests_icon_disable.png",
                         height: 24),
                     label: "Requests"),
-                controllerLogin.isLogin == false
+                controllerLogin.isLogin.value == false
                     ? BottomNavigationBarItem(
                         backgroundColor: constants.primaryColor,
                         icon: Image.asset(
@@ -81,7 +81,7 @@ class BotNavBar extends StatelessWidget {
                                 : "assets/icons/bot_nav_bar/simulation_icon_disable.png",
                             height: 24),
                         label: "Simulation"),
-                controllerLogin.isLogin == false
+                controllerLogin.isLogin.value == false
                     ? BottomNavigationBarItem(
                         backgroundColor: constants.primaryColor,
                         icon: Image.asset(

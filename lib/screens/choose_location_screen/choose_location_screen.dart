@@ -157,7 +157,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
                     setState(() {});
                     isNext = false;
                     controllerLogin.selectCountryIndex.value == 2
-                        ? controllerLogin.isFirtsTime.value = false
+                        ? controllerLogin.isFirstTime.value = false
                         : null;
                   },
                   child: Stack(

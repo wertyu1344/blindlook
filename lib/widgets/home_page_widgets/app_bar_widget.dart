@@ -1,10 +1,12 @@
+import 'package:blindlook/controller/controller.dart';
 import 'package:blindlook/widgets/notification/notification.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AppBarWidget extends StatelessWidget {
-  final bool isLogin;
-  const AppBarWidget({Key? key, required this.isLogin}) : super(key: key);
-
+  late bool isLogin;
+  AppBarWidget({Key? key, required this.isLogin}) : super(key: key);
+  LoginClass controllerLogin = Get.put(LoginClass());
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -13,10 +15,15 @@ class AppBarWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset(
-            "assets/images/home_page_images/glasses.png",
-            height: size.height / 16,
-            width: size.width / 8,
+          InkWell(
+            onTap: () {
+              controllerLogin.isLogin.value = !controllerLogin.isLogin.value;
+            },
+            child: Image.asset(
+              "assets/images/home_page_images/glasses.png",
+              height: size.height / 16,
+              width: size.width / 8,
+            ),
           ),
           InkWell(
             onTap: () {

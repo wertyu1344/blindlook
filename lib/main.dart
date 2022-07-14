@@ -49,13 +49,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(fontFamily: 'Cera'),
       home: SafeArea(
         child: Obx(
-          () => controllerLogin.isFirtsTime.value
+          () => controllerLogin.isFirstTime.value
               ? ChooseLocation()
               : Scaffold(
                   key: scaffoldKey,
                   extendBody: true,
                   bottomNavigationBar: BotNavBar(),
-                  body: controllerLogin.isLogin == false
+                  body: controllerLogin.isLogin.value == false
                       ? pages.elementAt(controller.pageIndex.value)
                       : pagesSingIn.elementAt(controller.pageIndex.value)),
         ),
