@@ -12,7 +12,7 @@ class LoyalityScreen extends StatelessWidget {
       conditionsPage(),
       joinPage(),
       pastWinners(),
-      winnerDetail(controller.priceName.value)
+      winnerDetail()
     ];
 
     return Obx(
@@ -54,11 +54,35 @@ class LoyalityScreen extends StatelessWidget {
                     color: Color.fromRGBO(164, 164, 164, 1), fontSize: 17),
               ),
               const SizedBox(height: 29),
+              Image.asset("assets/images/loyality/migros.png"),
               const SizedBox(height: 51),
-              InkWell(
-                onTap: () => controller.loyalityPageIndex.value = 1,
-                child: Image.asset(
-                  "assets/images/loyality/join.png",
+              Center(
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: const Color.fromRGBO(48, 0, 68, 1),
+                      borderRadius: BorderRadius.circular(6)),
+                  width: 340,
+                  height: 50,
+                  child: InkWell(
+                    onTap: () {
+                      controller.loyalityPageIndex.value = 1;
+                    },
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Image.asset("assets/images/loyality/snake.png",
+                            fit: BoxFit.fill),
+                        Image.asset("assets/images/loyality/effect.png"),
+                        const Text(
+                          "Join",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 11),
@@ -99,7 +123,7 @@ class LoyalityScreen extends StatelessWidget {
                             color: const Color.fromRGBO(48, 0, 68, 1),
                           ),
                           child: const Center(
-                            child: const Text(
+                            child: Text(
                               "Conditions",
                               style:
                                   TextStyle(color: Colors.white, fontSize: 17),
@@ -167,10 +191,31 @@ class LoyalityScreen extends StatelessWidget {
         Center(
           child: Padding(
             padding: const EdgeInsets.only(bottom: 150.0),
-            child: InkWell(
-              onTap: () => controller.loyalityPageIndex.value = 2,
-              child: Image.asset(
-                "assets/images/loyality/join.png",
+            child: Container(
+              decoration: BoxDecoration(
+                  color: const Color.fromRGBO(48, 0, 68, 1),
+                  borderRadius: BorderRadius.circular(6)),
+              width: 340,
+              height: 50,
+              child: InkWell(
+                onTap: () {
+                  controller.loyalityPageIndex.value = 2;
+                },
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset("assets/images/loyality/snake.png",
+                        fit: BoxFit.fill),
+                    Image.asset("assets/images/loyality/effect.png"),
+                    const Text(
+                      "Join",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -330,51 +375,53 @@ class LoyalityScreen extends StatelessWidget {
     );
   }
 
-  Widget winnerDetail(String priceName) {
-    return ListView(
-      children: [
-        const SizedBox(height: 63),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            InkWell(
-              onTap: () => controller.loyalityPageIndex.value = 3,
-              child: Image.asset(
-                "assets/images/request_page_images/back.png",
+  Widget winnerDetail() {
+    return Obx(
+      () => ListView(
+        children: [
+          const SizedBox(height: 63),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              InkWell(
+                onTap: () => controller.loyalityPageIndex.value = 3,
+                child: Image.asset(
+                  "assets/images/request_page_images/back.png",
+                  height: 24,
+                ),
+              ),
+              Text(
+                controller.priceName.value,
+                style: const TextStyle(
+                    color: Color.fromRGBO(48, 0, 68, 1), fontSize: 22),
+              ),
+              Image.asset(
+                "assets/images/home_page_images/send.png",
                 height: 24,
               ),
-            ),
-            Text(
-              priceName,
-              style: const TextStyle(
-                  color: Color.fromRGBO(48, 0, 68, 1), fontSize: 22),
-            ),
-            Image.asset(
-              "assets/images/home_page_images/send.png",
-              height: 24,
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 63,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25.0),
-          child: Image.asset(
-            "assets/images/loyality/migros.png",
-            width: 340,
+            ],
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25.0),
-          child: Column(
-            children: List.generate(
-                30,
-                (index) =>
-                    winnerWidget("Guven Sislioglu$index", "JUN $index, 2022")),
+          const SizedBox(
+            height: 63,
           ),
-        )
-      ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Image.asset(
+              "assets/images/loyality/migros.png",
+              width: 340,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Column(
+              children: List.generate(
+                  30,
+                  (index) => winnerWidget(
+                      "Guven Sislioglu$index", "JUN $index, 2022")),
+            ),
+          )
+        ],
+      ),
     );
   }
 

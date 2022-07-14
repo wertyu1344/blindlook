@@ -1,4 +1,6 @@
 import 'package:blindlook/constants/constants.dart';
+import 'package:blindlook/screens/choose_location_screen/choose_location_screen.dart';
+import 'package:blindlook/screens/home_screen/eye_brands_screen/eye_brands_screen.dart';
 import 'package:blindlook/screens/home_screen/home_screen.dart';
 import 'package:blindlook/screens/log_reg_screen/sign_up_screen.dart';
 import 'package:blindlook/screens/request_screen/request_screen.dart';
@@ -8,9 +10,10 @@ import 'package:blindlook/widgets/bot_nav_bar/bot_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+
 import 'controller/controller.dart';
 
-void main() {
+main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
@@ -34,8 +37,8 @@ class MyApp extends StatelessWidget {
     ];
     List<Widget> pagesSingIn = [
       const HomePage(),
-      const RequestScreen(),
-      const SimulationPage(),
+      RequestScreen(),
+      SimulationPage(),
       SettingsScreen(),
     ];
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -43,13 +46,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(fontFamily: 'Cera'),
       home: SafeArea(
         child: Obx(
-          () => Scaffold(
-              key: scaffoldKey,
-              extendBody: true,
-              bottomNavigationBar: BotNavBar(),
-              body: controllerLogin.isLogin == false
-                  ? pages.elementAt(controller.pageIndex.value)
-                  : pagesSingIn.elementAt(controller.pageIndex.value)),
+          () => controllerLogin.isFirtsTime.value
+              ? ChooseLocation()
+              : Scaffold(
+                  key: scaffoldKey,
+                  extendBody: true,
+                  bottomNavigationBar: BotNavBar(),
+                  body: controllerLogin.isLogin == false
+                      ? pages.elementAt(controller.pageIndex.value)
+                      : pagesSingIn.elementAt(controller.pageIndex.value)),
         ),
       ),
     );

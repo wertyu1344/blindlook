@@ -80,7 +80,7 @@ class BotNavBar extends StatelessWidget {
                                 ? "assets/icons/bot_nav_bar/simulation_icon.png"
                                 : "assets/icons/bot_nav_bar/simulation_icon_disable.png",
                             height: 24),
-                        label: "Simuation"),
+                        label: "Simulation"),
                 controllerLogin.isLogin == false
                     ? BottomNavigationBarItem(
                         backgroundColor: constants.primaryColor,
