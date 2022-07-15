@@ -43,14 +43,14 @@ class RequestPageChooseRequest extends StatelessWidget {
             children: [
               RequestWidgets(
                   onTab: (imagePath) {
-                    controller.resquestType = imagePath;
+                    controller.requestType = imagePath;
                     incradeIndex();
                   },
                   imagePath: "Request",
                   padding: const EdgeInsets.only(right: 5)),
               RequestWidgets(
                   onTab: (imagePath) {
-                    controller.resquestType = imagePath;
+                    controller.requestType = imagePath;
 
                     incradeIndex();
                   },
@@ -58,7 +58,7 @@ class RequestPageChooseRequest extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 5)),
               RequestWidgets(
                   onTab: (imagePath) {
-                    controller.resquestType = imagePath;
+                    controller.requestType = imagePath;
 
                     incradeIndex();
                   },

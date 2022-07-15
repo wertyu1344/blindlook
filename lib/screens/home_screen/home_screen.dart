@@ -13,6 +13,7 @@ import 'package:get/get.dart';
 import '../../constants/constants.dart';
 import '../../widgets/home_page_widgets/app_bar_widget.dart';
 import '../../widgets/home_page_widgets/story_avatars.dart';
+import '../community_screen/community_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -42,23 +43,26 @@ class _HomePageState extends State<HomePage> {
                         ? const AboutUsScreen()
                         : controllerLogin.isHomePageActive.value == "EyeMenu"
                             ? EyeMenu()
-                            : const SizedBox());
+                            : controllerLogin.isHomePageActive.value ==
+                                    "Community"
+                                ? CommunityScreen()
+                                : const SizedBox());
   }
 
   Padding mainHomePage() {
-    controllerLogin.isLogin == false
+    controllerLogin.isLogin.value == false
         ? controller.homepageCenter1.value = "EyeBrands"
         : controller.homepageCenter1.value = "Simulations";
-    controllerLogin.isLogin == false
+    controllerLogin.isLogin.value == false
         ? controller.homepageCenter2.value = "EyeMenu"
         : controller.homepageCenter2.value = "AboutUs";
-    controllerLogin.isLogin == false
+    controllerLogin.isLogin.value == false
         ? controller.homepageCenter3.value = "Request"
         : controller.homepageCenter3.value = "Community";
-    controllerLogin.isLogin == false
+    controllerLogin.isLogin.value == false
         ? controller.homePageCenter4.value = "News"
         : controller.homePageCenter4.value = "News";
-    controllerLogin.isLogin == false
+    controllerLogin.isLogin.value == false
         ? controller.homePageCenter5.value = "SignUp"
         : controller.homePageCenter5.value = "Loyality";
     return Padding(
@@ -66,7 +70,8 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         children: [
           Expanded(
-              flex: 2, child: AppBarWidget(isLogin: controllerLogin.isLogin)),
+              flex: 2,
+              child: AppBarWidget(isLogin: controllerLogin.isLogin.value)),
           buildSizedBox(h: 30),
           Expanded(
               flex: 3,
@@ -92,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         CenterWidgets(
-                          imagePath: controllerLogin.isLogin
+                          imagePath: controllerLogin.isLogin.value
                               ? "Simulations"
                               : "EyeBrands",
                           flex: 14,
@@ -117,14 +122,15 @@ class _HomePageState extends State<HomePage> {
                           text: controller.homepageCenter1.value,
                         ),
                         CenterWidgets(
-                          imagePath:
-                              controllerLogin.isLogin ? "BlindLook" : "book",
+                          imagePath: controllerLogin.isLogin.value
+                              ? "BlindLook"
+                              : "book",
                           flex: 10,
                           padding: EdgeInsets.only(right: butonlarArasiBosluk),
                           onTap: () {
                             controllerLogin.selectedItemColor.value =
                                 const Color.fromRGBO(133, 91, 151, 1);
-                            if (controller.homePageCenter5.value == "AboutUs") {
+                            if (controller.homepageCenter2.value == "AboutUs") {
                               controllerLogin.isHomePageActive.value =
                                   "AboutUs";
                             } else {
@@ -144,13 +150,19 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       CenterWidgets(
-                        imagePath:
-                            controllerLogin.isLogin ? "Community" : "Request",
+                        imagePath: controllerLogin.isLogin.value
+                            ? "Community"
+                            : "Request",
                         flex: 15,
                         padding: EdgeInsets.only(
                             bottom: butonlarArasiBosluk, top: 45),
                         onTap: () {
-                          if (controller.homepageCenter3.value == "Request") {
+                          if (controller.homepageCenter3.value == "Community") {
+                            controllerLogin.isHomePageActive.value =
+                                "Community";
+                            controllerLogin.selectedItemColor.value =
+                                const Color.fromRGBO(133, 91, 151, 1);
+                          } else {
                             controller.pageIndex.value = 1;
                           }
                         },
@@ -168,8 +180,9 @@ class _HomePageState extends State<HomePage> {
                         text: controller.homePageCenter4.value,
                       ),
                       CenterWidgets(
-                        imagePath:
-                            controllerLogin.isLogin ? "Loyalty" : "SignUp",
+                        imagePath: controllerLogin.isLogin.value
+                            ? "Loyalty"
+                            : "SignUp",
                         flex: 10,
                         padding: EdgeInsets.zero,
                         onTap: () {
