@@ -3,6 +3,7 @@ import 'package:blindlook/screens/choose_location_screen/choose_location_screen.
 import 'package:blindlook/screens/home_screen/eye_brands_screen/eye_brands_screen.dart';
 import 'package:blindlook/screens/home_screen/home_screen.dart';
 import 'package:blindlook/screens/log_reg_screen/sign_up_screen.dart';
+import 'package:blindlook/screens/news_screen/news_screen.dart';
 import 'package:blindlook/screens/request_screen/request_screen.dart';
 import 'package:blindlook/screens/settings_screen/settings_screen.dart';
 import 'package:blindlook/screens/simulation_screen/simulation.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
     List<Widget> pages = [
       const HomePage(),
       const RequestScreen(),
+      NewsScreen(),
       SignUpScreen(),
     ];
     List<Widget> pagesSingIn = [

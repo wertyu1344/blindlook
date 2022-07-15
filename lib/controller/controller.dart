@@ -41,6 +41,7 @@ class LoginClass extends GetxController {
   var isLogin = false.obs;
   var eyeBrandsVisible = true.obs;
   var eyeBrandsFilterIndex = 0.obs;
+
   var isFirstTime = false.obs;
   var signupPageIndex = 0.obs;
   var requestType = "";

@@ -63,7 +63,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
                 ),
                 const SizedBox(height: 50),
                 TextFormField(
-                  style: TextStyle(color: constants.primaryColor),
+                  style: TextStyle(color: Colors.white),
                   cursorColor: Colors.white54,
                   decoration: InputDecoration(
                     hintText: "Search...",

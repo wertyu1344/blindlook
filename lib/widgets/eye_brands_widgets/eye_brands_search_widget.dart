@@ -52,7 +52,7 @@ class EyeBrandsSearchWidget extends StatelessWidget {
                 height: 40,
               ),
               TextFormField(
-                style: TextStyle(color: constants.primaryColor),
+                style: TextStyle(color: Colors.white),
                 cursorColor: Colors.white54,
                 decoration: const InputDecoration(
                   hintText: "Search...",

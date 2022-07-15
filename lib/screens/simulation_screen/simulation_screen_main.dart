@@ -1,6 +1,8 @@
+import 'package:blindlook/widgets/simulation_page_widgets/country_filter_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../constants/constants.dart';
+import '../../widgets/eye_brands_widgets/country_dialog.dart';
 import '../../widgets/simulation_page_widgets/simulations.dart';
 
 class SimulationScreen extends StatelessWidget {
@@ -52,10 +54,18 @@ class SimulationScreen extends StatelessWidget {
                 const SizedBox(
                   width: 30,
                 ),
-                const Text(
-                  "Category",
-                  style: TextStyle(
-                      color: Color.fromARGB(223, 255, 255, 255), fontSize: 20),
+                TextButton(
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => CountryDialogSimPage());
+                  },
+                  child: const Text(
+                    "Category",
+                    style: TextStyle(
+                        color: Color.fromARGB(223, 255, 255, 255),
+                        fontSize: 20),
+                  ),
                 )
               ],
             ),
