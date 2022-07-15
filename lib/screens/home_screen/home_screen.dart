@@ -2,6 +2,7 @@ import 'package:blindlook/controller/controller.dart';
 import 'package:blindlook/screens/about_us/about_us.dart';
 import 'package:blindlook/screens/eye_menu_screen/eye_menu.dart';
 import 'package:blindlook/screens/home_screen/eye_brands_screen/eye_brands_screen.dart';
+import 'package:blindlook/screens/home_screen/story_screen/story_screen.dart';
 import 'package:blindlook/screens/log_reg_screen/sign_up_screen.dart';
 import 'package:blindlook/screens/loyality/loyality.dart';
 import 'package:blindlook/screens/news_screen/news_screen.dart';
@@ -11,6 +12,7 @@ import 'package:get/get.dart';
 
 import '../../constants/constants.dart';
 import '../../widgets/home_page_widgets/app_bar_widget.dart';
+import '../../widgets/home_page_widgets/story_avatars.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -67,25 +69,19 @@ class _HomePageState extends State<HomePage> {
               flex: 2, child: AppBarWidget(isLogin: controllerLogin.isLogin)),
           buildSizedBox(h: 30),
           Expanded(
-            flex: 3,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: List.generate(
-                4,
-                (index) => Row(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Image.asset(
-                        "assets/images/home_page_images/avatars/avatar-${index + 2}.png",
-                      ),
+              flex: 3,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 4,
+                itemBuilder: (context, index) => StoryAvatars(
+                  index: index,
+                  onTap: () => Get.to(
+                    StoryScreen(
+                      index: index,
                     ),
-                    buildSizedBox(w: 15)
-                  ],
+                  ),
                 ),
-              ),
-            ),
-          ),
+              )),
           Expanded(
             flex: 16,
             child: Row(

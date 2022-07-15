@@ -42,7 +42,7 @@ class CenterWidgets extends StatelessWidget {
                     width: size.width / 6,
                   ),
                   SizedBox(
-                    height: 24,
+                    height: 15,
                   ),
                   Text(
                     text,

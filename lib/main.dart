@@ -37,8 +37,8 @@ class MyApp extends StatelessWidget {
     ];
     List<Widget> pagesSingIn = [
       const HomePage(),
-      RequestScreen(),
-      SimulationPage(),
+      const RequestScreen(),
+      const SimulationPage(),
       SettingsScreen(),
     ];
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
