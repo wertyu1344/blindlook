@@ -162,8 +162,9 @@ class _CountryDialogState extends State<CountryDialog> {
                                     ),
                                   ),
                                   border: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10)),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(10),
+                                    ),
                                     borderSide: BorderSide(
                                       style: BorderStyle.solid,
                                       color: Colors.white54,
